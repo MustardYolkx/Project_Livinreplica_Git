@@ -1,0 +1,4 @@
+repository "Project_Livinreplica@MUSTARDYOLK@cloud"
+  path "/"
+    br "/main"
+    co "/main"
