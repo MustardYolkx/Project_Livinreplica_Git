@@ -1,0 +1,14 @@
+Symbol,ID,Character,Position,Content,Jump to,Effect,Effect Target
+#,0,NPC1,Left,HI,1,,
+#,1,NPC2,Right,Hey,2,,
+#,2,NPC1,Left,How are you,3,,
+&,3,,,I'm good,5,,
+&,4,,,Not good,6,,
+#,5,NPC1,,Great,7,Favorability+1,NPC
+#,6,NPC1,,I'm sorry,8,,
+#,7,NPC2,,haha,10,,
+#,8,NPC2,,5555,10,,
+#,9,,,,,,
+END,10,,,,,,
+@,11,,,,,,
+@,12,LastRow,,,,,
