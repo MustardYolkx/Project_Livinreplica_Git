@@ -18,9 +18,28 @@ public class InteractPhaseMain : BasePanel
     public override void OnStart()
     {
         base.OnStart();
+        List<string> list = UI_Method.GetInstance().GetNPCList();
+        GameObject panel = UI_Method.GetInstance().FindObjectInChild(ActiveObj, "NPCList");
+        GameObject optionButton = Resources.Load<GameObject>("Panel/OptionButton");
+        Dictionary<string,GameObject> npcButton = UI_Method.GetInstance().InstantiateNPCListButton(list, panel, optionButton);
+        foreach(GameObject buttonOBJ in npcButton.Values)
+        {
+            buttonOBJ.GetComponent<Button>().onClick.AddListener
+            (
+                 delegate 
+                
+                    {
+                        ConversationStart(npcButton);
+                                
+                    }
+                    
+                
+            );
+        }
         UI_Method.GetInstance().GetOrAddComponentInChild<Button>(ActiveObj, "PlayerAvater").onClick.AddListener(OpenPlayerAvater);
         UI_Method.GetInstance().GetOrAddComponentInChild<Button>(ActiveObj, "Inventory").onClick.AddListener(OpenInventory);
         UI_Method.GetInstance().GetOrAddComponentInChild<Button>(ActiveObj, "Map").onClick.AddListener(OpenMap);
+        //UI_Method.GetInstance().GetOrAddComponentInChild<Button>(ActiveObj, "NPC").onClick.AddListener(ConversationStart);
     }
     private void Close()
     {
@@ -37,6 +56,16 @@ public class InteractPhaseMain : BasePanel
     private void OpenMap()
     {
         GameRoot.GetInstance().UIManager_Root.Push(new MapPanel());
+    }
+    private void ConversationStart(Dictionary<string, GameObject> dic)
+    {
+        BaseDialogue baseDia = UI_Method.GetInstance().FindDialogueInButton(dic);
+        GameRoot.GetInstance().DialogueManager_Root.Push(baseDia);
+        GameRoot.GetInstance().UIManager_Root.Push(new DialogueOperationPanel());
+        //string name = UI_Method.GetInstance().GetOrAddComponentInChild<Text>(ActiveObj, "Name").ToString();
+        //string path = "Dialogue/DialogueBase/" + name + "_Dialogue";
+        
+
     }
     private void OpenNewScene()
     {

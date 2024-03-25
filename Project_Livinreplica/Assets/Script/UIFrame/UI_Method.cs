@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class UI_Method 
 {
@@ -88,5 +91,33 @@ public class UI_Method
 
         Debug.LogError($"Can't find{childName} In {gameObject.name}");
         return null;
+    }
+
+    public List<string> GetNPCList()
+    {
+        Scene_NPCList npcList = GameObject.FindObjectOfType<Scene_NPCList>();
+        return npcList.npcList;
+    }
+
+    public Dictionary<string,GameObject> InstantiateNPCListButton(List<string> npclist,GameObject listpanel,GameObject optionButton)
+    {
+        Dictionary<string, GameObject> dic = new Dictionary<string, GameObject>();
+        foreach (string i in npclist)
+        {
+           GameObject button = GameObject.Instantiate<GameObject>(optionButton, listpanel.transform);
+            button.GetComponentInChildren<TextMeshProUGUI>().text = i;
+            //button.GetComponent<Button>().onClick.AddListener();
+           dic.Add(i,button);           
+        }
+        return dic;
+    }
+    public BaseDialogue FindDialogueInButton(Dictionary<string, GameObject> dic)
+    {
+        GameObject clickedButton = EventSystem.current.currentSelectedGameObject;
+        string name= clickedButton.GetComponentInChildren<TextMeshProUGUI>().text;
+        return GameRoot.GetInstance().Dialog_Dictionary.dict_dialogue[name];
+        //GameObject button = dic[clickedButton.name];
+        
+        //return button.GetComponent<BaseDialogue>();
     }
 }

@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class GameRoot : MonoBehaviour
 {
+    private DialogDictionary diaDic;
+    public DialogDictionary Dialog_Dictionary { get => diaDic; }
+
     private UI_Manager uiManager;
     public UI_Manager UIManager_Root { get => uiManager; }
 
-    private SceneControl sceneControl;
+    private SceneControl sceneControl;    
 
     public SceneControl SceneControl_Root { get => sceneControl; }
+
+    private DialogueManager_Test dialogueManager;
+    public DialogueManager_Test DialogueManager_Root { get => dialogueManager; }
+
     private static GameRoot instance;
 
     public static GameRoot GetInstance()
@@ -35,6 +42,8 @@ public class GameRoot : MonoBehaviour
 
         uiManager = new UI_Manager();
         sceneControl = new SceneControl();
+        diaDic= new DialogDictionary();
+        dialogueManager= new DialogueManager_Test();
     }
 
     private void Start()
@@ -46,6 +55,9 @@ public class GameRoot : MonoBehaviour
 
         SceneControl_Root.dict_scene.Add(scene1.SceneName, scene1);
 
+        //NPC1_Dialogue npc1 = new NPC1_Dialogue();
+        //Dialog_Dictionary.dict_dialogue.Add("NPC1", npc1);
+        Debug.Log(Dialog_Dictionary);
         #region Push First Panel
         UIManager_Root.Push(new StartPanel());
 
