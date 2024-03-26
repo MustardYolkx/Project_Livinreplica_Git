@@ -15,9 +15,12 @@ public class BaseDialogue
     public BaseDialogue(DialogueInfo base_info)
     {
         baseInfo = base_info;
+
         dict_sprites= new Dictionary<string, Sprite>();
-        favorability = 0;
-        startIndex= 0;
+
+        favorability = 0;  //set character favorability
+
+        startIndex= 0;  //set dialogue start index
     }
     public virtual void OnStart()
     {

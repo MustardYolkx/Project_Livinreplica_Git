@@ -834,7 +834,7 @@ GameObject:
   - component: {fileID: 7451921295808049538}
   - component: {fileID: 1207873826166992008}
   m_Layer: 5
-  m_Name: Viewport
+  m_Name: NPCList
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -917,7 +917,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3498837298076314975}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
   m_Name: 
@@ -947,7 +947,7 @@ GameObject:
   - component: {fileID: 6921351610607906741}
   - component: {fileID: 7743090692199253891}
   m_Layer: 5
-  m_Name: NPCList
+  m_Name: NPCListPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
