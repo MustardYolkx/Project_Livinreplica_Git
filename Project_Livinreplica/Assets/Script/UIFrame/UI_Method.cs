@@ -93,24 +93,46 @@ public class UI_Method
         return null;
     }
 
-    public List<string> GetNPCList()
-    {
-        Scene_NPCList npcList = GameObject.FindObjectOfType<Scene_NPCList>();
-        return npcList.npcList;
-    }
+    /// <summary>
+    /// Get current NPC List in this game scene, return a List<string>
+    /// </summary>
+    /// <returns></returns>
+    //public List<string> GetNPCList()
+    //{       
+    //    List<string> list = new List<string>();
+    //    Scene_NPCList npcList = GameObject.FindObjectOfType<Scene_NPCList>();
+    //    foreach (string i in npcList.npcList)
+    //    {
+    //        list.Add(i);
+    //    }
+    //        return list;
+    //}
 
+    /// <summary>
+    /// Instantiate the NPC List button
+    /// </summary>
+    /// <param name="npclist"> It's the npc list</param>
+    /// <param name="listpanel">the target panel to show the buttons</param>
+    /// <param name="optionButton">the npc interact button</param>
+    /// <returns></returns>
     public Dictionary<string,GameObject> InstantiateNPCListButton(List<string> npclist,GameObject listpanel,GameObject optionButton)
     {
         Dictionary<string, GameObject> dic = new Dictionary<string, GameObject>();
-        foreach (string i in npclist)
-        {
+        for(int i = 0; i < npclist.Count; i++) 
+        { 
            GameObject button = GameObject.Instantiate<GameObject>(optionButton, listpanel.transform);
-            button.GetComponentInChildren<TextMeshProUGUI>().text = i;
+            button.GetComponentInChildren<TextMeshProUGUI>().text = npclist[i];
             //button.GetComponent<Button>().onClick.AddListener();
-           dic.Add(i,button);           
+           dic.Add(npclist[i], button);           
         }
         return dic;
     }
+
+    /// <summary>
+    /// automatically connect to corresponded dialogue
+    /// </summary>
+    /// <param name="dic">the npc dictionary, contains npc name and corresponded dialogue</param>
+    /// <returns></returns>
     public BaseDialogue FindDialogueInButton(Dictionary<string, GameObject> dic)
     {
         GameObject clickedButton = EventSystem.current.currentSelectedGameObject;

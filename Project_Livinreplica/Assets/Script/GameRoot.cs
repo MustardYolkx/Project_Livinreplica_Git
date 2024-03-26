@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GameRoot : MonoBehaviour
 {
+    private Scene_NPCList npcList;
+    public Scene_NPCList NPCList { get => npcList; } 
+
     private DialogDictionary diaDic;
     public DialogDictionary Dialog_Dictionary { get => diaDic; }
 
@@ -44,6 +47,7 @@ public class GameRoot : MonoBehaviour
         sceneControl = new SceneControl();
         diaDic= new DialogDictionary();
         dialogueManager= new DialogueManager_Test();
+        npcList= new Scene_NPCList();
     }
 
     private void Start()
