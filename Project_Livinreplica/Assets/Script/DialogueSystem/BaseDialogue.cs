@@ -11,6 +11,7 @@ public class BaseDialogue
 
     public int startIndex;
 
+    public bool isNameReveal;
     public Dictionary<string, Sprite> dict_sprites; 
     public BaseDialogue(DialogueInfo base_info)
     {

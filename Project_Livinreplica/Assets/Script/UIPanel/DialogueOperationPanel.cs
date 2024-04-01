@@ -25,6 +25,7 @@ public class DialogueOperationPanel : BasePanel
     //Dictionary<string, Sprite> imageDic = new Dictionary<string, Sprite>();
 
     private int dialogIndex;
+    private bool nameReveal;
 
     private string[] dialogueRows;
 
@@ -52,7 +53,8 @@ public class DialogueOperationPanel : BasePanel
         
         //Panel Set up//
         ReadFileText();
-        
+        InitialValue();
+
         spriteLeft = UI_Method.GetInstance().GetOrAddComponentInChild<Image>(ActiveObj, "LeftImage");
         spriteRight = UI_Method.GetInstance().GetOrAddComponentInChild<Image>(ActiveObj, "RightImage");
         nameText = UI_Method.GetInstance().GetOrAddComponentInChild<TextMeshProUGUI>(ActiveObj, "NameText");
@@ -68,16 +70,31 @@ public class DialogueOperationPanel : BasePanel
         UI_Method.GetInstance().GetOrAddComponentInChild<Button>(ActiveObj, "Next").onClick.AddListener(Next);
         
     }
+
+    /// <summary>
+    /// Get character image in Left Position in Resouorces
+    /// </summary>
+    /// <param name="name"></param>
     public void GetSpritesDic(string name)
     {
         string path = "Dialogue/" + name + "/Expressions";
         imageLeftDic.Add(name, Resources.Load<Sprite>(path + "/Happy"));
     }
 
+    /// <summary>
+    /// Get Character image in right position in Resources
+    /// </summary>
+    /// <param name="name"></param>
     public void GetProtagnistSpritesDic(string name)
     {
         string path = "Dialogue/" +name+ "/Expressions";
         imageRightDic.Add(name, Resources.Load<Sprite>(path + "/Happy"));
+    }
+    private void InitialValue()
+    {
+        dialogIndex = targetDialogue.startIndex;
+        nameReveal = targetDialogue.isNameReveal;
+
     }
     private void ReadFileText()
     {
@@ -85,10 +102,27 @@ public class DialogueOperationPanel : BasePanel
         Debug.Log(file);
         dialogueRows = file.text.Split('\n');
     }
-    public void UpdateText(string name, string text)
+    public void UpdateText(string name, string text, string position)
     {
-        nameText.text = name;
-        dialogueText.text = text;
+        if(position == "Left")
+        {
+            if (nameReveal)
+            {
+                nameText.text = name;
+                dialogueText.text = text;
+            }
+            else
+            {
+                nameText.text = "???";
+                dialogueText.text = text;
+            }
+        }
+        else if(position == "Right")
+        {
+            nameText.text = name;
+            dialogueText.text = text;
+        }
+        
     }
 
     public void UpdateImage(string name, string position,string expression)
@@ -111,7 +145,7 @@ public class DialogueOperationPanel : BasePanel
             string[] cells = dialogueRows[i].Split(',');
             if (cells[0] == "#" && int.Parse(cells[1]) == dialogIndex)
             {
-                UpdateText(cells[2], cells[5]);
+                UpdateText(cells[2], cells[5], cells[3]);
                 UpdateImage(cells[2], cells[3], cells[4]);
 
                 dialogIndex = int.Parse(cells[6]);
@@ -182,6 +216,23 @@ public class DialogueOperationPanel : BasePanel
                 {
                     GameRoot.GetInstance().Dialog_Dictionary.dict_dialogue[npc].favorability += param;
                     Debug.Log(GameRoot.GetInstance().Dialog_Dictionary.dict_dialogue[npc].favorability);
+                }
+            }
+        }
+        else if(effect == "NameReveal")
+        {
+            foreach (string npc in GameRoot.GetInstance().Dialog_Dictionary.dict_dialogue.Keys)
+            {
+                if (npc == target)
+                {
+                    if(param == 0)
+                    {
+                        GameRoot.GetInstance().Dialog_Dictionary.dict_dialogue[npc].isNameReveal = false;
+                    }
+                    else if(param == 1)
+                    {
+                        GameRoot.GetInstance().Dialog_Dictionary.dict_dialogue[npc].isNameReveal = true;
+                    }                  
                 }
             }
         }
