@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class StartPanel : BasePanel
 {
     private static string name = "StartPanel";
-    private static string path = "Panel/StartPanel";
+    private static string path = "Panel/JiUPanel/GameStartPanel";
 
     public static readonly UI_Type uI_Type = new UI_Type(path, name);
 
@@ -18,17 +18,31 @@ public class StartPanel : BasePanel
     public override void OnStart()
     {
         base.OnStart();
-        UI_Method.GetInstance().GetOrAddComponentInChild<Button>(ActiveObj, "Close").onClick.AddListener(Close);
-        UI_Method.GetInstance().GetOrAddComponentInChild<Button>(ActiveObj, "OpenNewScene").onClick.AddListener(OpenNewScene);
+        UI_Method.GetInstance().GetOrAddComponentInChild<Button>(ActiveObj, "StoryModeButton").onClick.AddListener(OpenStoryModePanel);
+        UI_Method.GetInstance().GetOrAddComponentInChild<Button>(ActiveObj, "VSModeButton").onClick.AddListener(OpenVSPanel);
+        UI_Method.GetInstance().GetOrAddComponentInChild<Button>(ActiveObj, "OptionButton").onClick.AddListener(OpenOptionPanel);
+        UI_Method.GetInstance().GetOrAddComponentInChild<Button>(ActiveObj, "LeaveButton").onClick.AddListener(Close);
     }
-    private void Close()
-    {
-        GameRoot.GetInstance().UIManager_Root.Pop(false);
-    }
-    private void OpenNewScene()
+
+    private void OpenStoryModePanel()
     {
         Scene2 scene2 = new Scene2();
         GameRoot.GetInstance().SceneControl_Root.LoadScene(scene2.SceneName, scene2);
+    }
+
+    private void OpenVSPanel()
+    {
+
+    }
+
+    private void OpenOptionPanel()
+    {
+
+    }
+
+    private void Close()
+    {
+        GameRoot.GetInstance().UIManager_Root.Pop(false);
     }
     public override void OnEnable()
     {

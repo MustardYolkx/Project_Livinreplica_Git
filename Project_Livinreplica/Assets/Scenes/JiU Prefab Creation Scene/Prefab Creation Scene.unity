@@ -410,10 +410,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Reference Line
       objectReference: {fileID: 0}
-    - target: {fileID: 2686615606245572650, guid: d48176a9019bfdd40bb09c43341b03ff, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5515984683024234487, guid: d48176a9019bfdd40bb09c43341b03ff, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -470,10 +466,6 @@ PrefabInstance:
     - target: {fileID: 500031436877680132, guid: fb4a888a9542ae8418b2145a92dfa81c, type: 3}
       propertyPath: m_Name
       value: StoryModePanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 500031436877680132, guid: fb4a888a9542ae8418b2145a92dfa81c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2890381453226645786, guid: fb4a888a9542ae8418b2145a92dfa81c, type: 3}
       propertyPath: m_Pivot.x
@@ -652,50 +644,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FirstStartPanel
       objectReference: {fileID: 0}
-    - target: {fileID: 4164628265720293797, guid: 52066c7496182d54393d7ac8ec79e17f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4216609402588251351, guid: 52066c7496182d54393d7ac8ec79e17f, type: 3}
-      propertyPath: m_fontStyle
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4216609402588251351, guid: 52066c7496182d54393d7ac8ec79e17f, type: 3}
-      propertyPath: m_fontColor.b
-      value: 0.19607845
-      objectReference: {fileID: 0}
-    - target: {fileID: 4216609402588251351, guid: 52066c7496182d54393d7ac8ec79e17f, type: 3}
-      propertyPath: m_fontColor.g
-      value: 0.19607845
-      objectReference: {fileID: 0}
-    - target: {fileID: 4216609402588251351, guid: 52066c7496182d54393d7ac8ec79e17f, type: 3}
-      propertyPath: m_fontColor.r
-      value: 0.19607845
-      objectReference: {fileID: 0}
-    - target: {fileID: 4216609402588251351, guid: 52066c7496182d54393d7ac8ec79e17f, type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4281479730
-      objectReference: {fileID: 0}
-    - target: {fileID: 6365951963281222257, guid: 52066c7496182d54393d7ac8ec79e17f, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6365951963281222257, guid: 52066c7496182d54393d7ac8ec79e17f, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6365951963281222257, guid: 52066c7496182d54393d7ac8ec79e17f, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 139.619
-      objectReference: {fileID: 0}
-    - target: {fileID: 6365951963281222257, guid: 52066c7496182d54393d7ac8ec79e17f, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 960
-      objectReference: {fileID: 0}
-    - target: {fileID: 6365951963281222257, guid: 52066c7496182d54393d7ac8ec79e17f, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 69.80951
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -722,10 +670,6 @@ PrefabInstance:
     - target: {fileID: 1128573707209377651, guid: c6171ee9e504da744989bcd53494208c, type: 3}
       propertyPath: m_Name
       value: GameStartPanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 1128573707209377651, guid: c6171ee9e504da744989bcd53494208c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1698408785871405749, guid: c6171ee9e504da744989bcd53494208c, type: 3}
       propertyPath: m_Pivot.x
@@ -806,22 +750,6 @@ PrefabInstance:
     - target: {fileID: 1698408785871405749, guid: c6171ee9e504da744989bcd53494208c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2102291664036668750, guid: c6171ee9e504da744989bcd53494208c, type: 3}
-      propertyPath: m_Name
-      value: VSModeButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 4493194840855287464, guid: c6171ee9e504da744989bcd53494208c, type: 3}
-      propertyPath: m_Name
-      value: StoryModeButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 5838262334117199938, guid: c6171ee9e504da744989bcd53494208c, type: 3}
-      propertyPath: m_text
-      value: Story Mode
-      objectReference: {fileID: 0}
-    - target: {fileID: 5977102065112898615, guid: c6171ee9e504da744989bcd53494208c, type: 3}
-      propertyPath: m_text
-      value: VS Mode
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -916,29 +844,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4236637901336142531, guid: dd1ce5e5094bb3341ad160a81a05b754, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4415559567628366680, guid: dd1ce5e5094bb3341ad160a81a05b754, type: 3}
       propertyPath: m_Name
       value: OptionGamePanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 4415559567628366680, guid: dd1ce5e5094bb3341ad160a81a05b754, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5001204905836713829, guid: dd1ce5e5094bb3341ad160a81a05b754, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7947901397271108641, guid: dd1ce5e5094bb3341ad160a81a05b754, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8742897792392194431, guid: dd1ce5e5094bb3341ad160a81a05b754, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
