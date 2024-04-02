@@ -24,7 +24,10 @@ public class Scene_NPCList
 
     public enum Scenes
     {
-        TempleteScene,
+        TempleteScene_Morning,
+        TempleteScene_Afternoon,
+        TempleteScene_Evening,
+
     }
 
     public Scenes currentScene;
@@ -48,15 +51,19 @@ public class Scene_NPCList
         currentNPCList = new List<string>();
 
         currentTime = Time.Morning;
+        currentScene = Scenes.TempleteScene_Morning;
 
-        ChangeDefualtSceneList(Scenes.TempleteScene, "NPC1", true);
+        //ChangeDefualtSceneList(Scenes.TempleteScene_Morning, "NPC1", true);
 
-        currentNPCList = templeteNPCList;
+        //currentNPCList = templeteNPCList;
     }
 
+    /// <summary>
+    /// Add a NPC in a certain Scene
+    /// </summary>
     public void AddElementInDictionary()
     {
-        dict_allNPC.Add(Scenes.TempleteScene, templeteNPCList);
+        dict_allNPC.Add(Scenes.TempleteScene_Morning, templeteMorning_NPCList);
     }
 
     public void ChangeTime(Time time)
@@ -71,13 +78,16 @@ public class Scene_NPCList
         ChangeSceneList();
     }
 
+    /// <summary>
+    /// Check current time and scene, and change currentNPCList to a certain sceneList;
+    /// </summary>
     public void ChangeSceneList()
     {
         if(currentTime == Time.Morning)
         {
-            if(currentScene == Scenes.TempleteScene)
+            if(currentScene == Scenes.TempleteScene_Morning)
             {
-                currentNPCList = templeteNPCList;
+                currentNPCList = templeteMorning_NPCList;
             }
         }
         else if(currentTime == Time.Afternoon)
@@ -90,8 +100,14 @@ public class Scene_NPCList
         }
     }
 
-    public List<string> templeteNPCList = new List<string>();
+    public List<string> templeteMorning_NPCList = new List<string>();
 
+    /// <summary>
+    /// Add a character to a NPC list of a certain scene;
+    /// </summary>
+    /// <param name="targetScene">A scene you want to add a NPC</param>
+    /// <param name="npcName">The name of the NPC you want to add</param>
+    /// <param name="add">true == add, False == remove</param>
     public void ChangeDefualtSceneList(Scenes targetScene, string npcName, bool add)
     {
         if (add)
@@ -106,6 +122,7 @@ public class Scene_NPCList
         }
     }
 
+
     public void DeleteNPCInAllList(string name)
     {
         foreach(List<string> list in dict_allNPC.Values)
@@ -117,6 +134,19 @@ public class Scene_NPCList
                     list.Remove(name);
                 }
             }
+        }
+    }
+
+    public void AutoAddNPC()
+    {
+        foreach(string npc in GameRoot.GetInstance().Dialog_Dictionary_Root.dict_dialogue.Keys)
+        {
+            foreach(Time time in GameRoot.GetInstance().Dialog_Dictionary_Root.dict_dialogue[npc].npcShowScene.Keys)
+            {
+                Scenes scene = GameRoot.GetInstance().Dialog_Dictionary_Root.dict_dialogue[npc].npcShowScene[time];                
+                ChangeDefualtSceneList(scene, npc, true);
+            }
+            
         }
     }
 }

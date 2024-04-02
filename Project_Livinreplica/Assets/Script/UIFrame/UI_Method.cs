@@ -137,7 +137,7 @@ public class UI_Method
     {
         GameObject clickedButton = EventSystem.current.currentSelectedGameObject;
         string name= clickedButton.GetComponentInChildren<TextMeshProUGUI>().text;
-        return GameRoot.GetInstance().Dialog_Dictionary.dict_dialogue[name];
+        return GameRoot.GetInstance().Dialog_Dictionary_Root.dict_dialogue[name];
         //GameObject button = dic[clickedButton.name];
         
         //return button.GetComponent<BaseDialogue>();

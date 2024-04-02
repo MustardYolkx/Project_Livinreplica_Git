@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,13 +13,16 @@ public class BaseDialogue
     public int startIndex;
 
     public bool isNameReveal;
+
+    public Dictionary<Scene_NPCList.Time, Scene_NPCList.Scenes> npcShowScene;
+
     public Dictionary<string, Sprite> dict_sprites; 
     public BaseDialogue(DialogueInfo base_info)
     {
         baseInfo = base_info;
 
         dict_sprites= new Dictionary<string, Sprite>();
-
+        npcShowScene = new Dictionary<Scene_NPCList.Time, Scene_NPCList.Scenes>();
         favorability = 0;  //set character favorability
 
         startIndex= 0;  //set dialogue start index

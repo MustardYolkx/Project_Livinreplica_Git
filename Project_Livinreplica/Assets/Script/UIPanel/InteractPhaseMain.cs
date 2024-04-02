@@ -22,7 +22,7 @@ public class InteractPhaseMain : BasePanel
     {
         base.OnStart();
         //List<string> list = UI_Method.GetInstance().GetNPCList();    //Load Npc interact button list info
-        List<string> list = GameRoot.GetInstance().NPCList.currentNPCList;
+        List<string> list = GameRoot.GetInstance().NPCList_Root.currentNPCList;
         Debug.Log(list.Count);
         GameObject panel = UI_Method.GetInstance().FindObjectInChild(ActiveObj, "NPCList");  //get 
         GameObject optionButton = Resources.Load<GameObject>("Panel/OptionButton");

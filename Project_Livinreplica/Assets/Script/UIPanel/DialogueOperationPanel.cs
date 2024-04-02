@@ -208,30 +208,30 @@ public class DialogueOperationPanel : BasePanel
         if (effect == "Favorability")
         {
             
-            foreach (string npc in GameRoot.GetInstance().Dialog_Dictionary.dict_dialogue.Keys)
+            foreach (string npc in GameRoot.GetInstance().Dialog_Dictionary_Root.dict_dialogue.Keys)
             {
                 Debug.Log(npc);
                 Debug.Log(target);
                 if (npc == target)
                 {
-                    GameRoot.GetInstance().Dialog_Dictionary.dict_dialogue[npc].favorability += param;
-                    Debug.Log(GameRoot.GetInstance().Dialog_Dictionary.dict_dialogue[npc].favorability);
+                    GameRoot.GetInstance().Dialog_Dictionary_Root.dict_dialogue[npc].favorability += param;
+                    Debug.Log(GameRoot.GetInstance().Dialog_Dictionary_Root.dict_dialogue[npc].favorability);
                 }
             }
         }
         else if(effect == "NameReveal")
         {
-            foreach (string npc in GameRoot.GetInstance().Dialog_Dictionary.dict_dialogue.Keys)
+            foreach (string npc in GameRoot.GetInstance().Dialog_Dictionary_Root.dict_dialogue.Keys)
             {
                 if (npc == target)
                 {
                     if(param == 0)
                     {
-                        GameRoot.GetInstance().Dialog_Dictionary.dict_dialogue[npc].isNameReveal = false;
+                        GameRoot.GetInstance().Dialog_Dictionary_Root.dict_dialogue[npc].isNameReveal = false;
                     }
                     else if(param == 1)
                     {
-                        GameRoot.GetInstance().Dialog_Dictionary.dict_dialogue[npc].isNameReveal = true;
+                        GameRoot.GetInstance().Dialog_Dictionary_Root.dict_dialogue[npc].isNameReveal = true;
                     }                  
                 }
             }
