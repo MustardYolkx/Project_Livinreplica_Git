@@ -5,10 +5,10 @@ using UnityEngine;
 public class GameRoot : MonoBehaviour
 {
     private Scene_NPCList npcList;
-    public Scene_NPCList NPCList { get => npcList; } 
+    public Scene_NPCList NPCList_Root { get => npcList; } 
 
     private DialogDictionary diaDic;
-    public DialogDictionary Dialog_Dictionary { get => diaDic; }
+    public DialogDictionary Dialog_Dictionary_Root { get => diaDic; }
 
     private UI_Manager uiManager;
     public UI_Manager UIManager_Root { get => uiManager; }
@@ -58,10 +58,10 @@ public class GameRoot : MonoBehaviour
         Scene1 scene1 = new Scene1();
 
         SceneControl_Root.dict_scene.Add(scene1.SceneName, scene1);
-
+        NPCList_Root.AutoAddNPC();
         //NPC1_Dialogue npc1 = new NPC1_Dialogue();
         //Dialog_Dictionary.dict_dialogue.Add("NPC1", npc1);
-        Debug.Log(Dialog_Dictionary);
+        Debug.Log(Dialog_Dictionary_Root);
         #region Push First Panel
         UIManager_Root.Push(new StartPanel());
 
