@@ -467,6 +467,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StoryModePanel
       objectReference: {fileID: 0}
+    - target: {fileID: 500031436877680132, guid: fb4a888a9542ae8418b2145a92dfa81c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2890381453226645786, guid: fb4a888a9542ae8418b2145a92dfa81c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -644,6 +648,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FirstStartPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 4164628265720293797, guid: 52066c7496182d54393d7ac8ec79e17f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -670,6 +678,10 @@ PrefabInstance:
     - target: {fileID: 1128573707209377651, guid: c6171ee9e504da744989bcd53494208c, type: 3}
       propertyPath: m_Name
       value: GameStartPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 1128573707209377651, guid: c6171ee9e504da744989bcd53494208c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1698408785871405749, guid: c6171ee9e504da744989bcd53494208c, type: 3}
       propertyPath: m_Pivot.x
@@ -750,6 +762,10 @@ PrefabInstance:
     - target: {fileID: 1698408785871405749, guid: c6171ee9e504da744989bcd53494208c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1934124743527904477, guid: c6171ee9e504da744989bcd53494208c, type: 3}
+      propertyPath: m_Alpha
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -847,6 +863,10 @@ PrefabInstance:
     - target: {fileID: 4415559567628366680, guid: dd1ce5e5094bb3341ad160a81a05b754, type: 3}
       propertyPath: m_Name
       value: OptionGamePanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4415559567628366680, guid: dd1ce5e5094bb3341ad160a81a05b754, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

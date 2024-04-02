@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class StartPanel : BasePanel
 {
-    private static string name = "StartPanel";
+    private static string name = "GameStartPanel";
     private static string path = "Panel/JiUPanel/GameStartPanel";
 
     public static readonly UI_Type uI_Type = new UI_Type(path, name);
@@ -18,6 +18,7 @@ public class StartPanel : BasePanel
     public override void OnStart()
     {
         base.OnStart();
+        
         UI_Method.GetInstance().GetOrAddComponentInChild<Button>(ActiveObj, "StoryModeButton").onClick.AddListener(OpenStoryModePanel);
         UI_Method.GetInstance().GetOrAddComponentInChild<Button>(ActiveObj, "VSModeButton").onClick.AddListener(OpenVSPanel);
         UI_Method.GetInstance().GetOrAddComponentInChild<Button>(ActiveObj, "OptionButton").onClick.AddListener(OpenOptionPanel);
@@ -26,8 +27,8 @@ public class StartPanel : BasePanel
 
     private void OpenStoryModePanel()
     {
-        Scene2 scene2 = new Scene2();
-        GameRoot.GetInstance().SceneControl_Root.LoadScene(scene2.SceneName, scene2);
+        UI_Method.GetInstance().AddOrGetComponent<CanvasGroup>(ActiveObj).alpha = 0;
+        GameRoot.GetInstance().UIManager_Root.Push(new StoryModePanel());
     }
 
     private void OpenVSPanel()
@@ -37,7 +38,9 @@ public class StartPanel : BasePanel
 
     private void OpenOptionPanel()
     {
-
+        UI_Method.GetInstance().AddOrGetComponent<CanvasGroup>(ActiveObj).alpha = 0;
+        GameRoot.GetInstance().UIManager_Root.Push(new OptionGamePanel());
+        
     }
 
     private void Close()
@@ -46,6 +49,7 @@ public class StartPanel : BasePanel
     }
     public override void OnEnable()
     {
+        UI_Method.GetInstance().AddOrGetComponent<CanvasGroup>(ActiveObj).alpha = 1;
         base.OnEnable();
     }
 
