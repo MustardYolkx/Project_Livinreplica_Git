@@ -225,7 +225,7 @@ GameObject:
   - component: {fileID: 1726422077872035934}
   - component: {fileID: 7943384624082816404}
   m_Layer: 5
-  m_Name: OptionButton
+  m_Name: NewGameButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
