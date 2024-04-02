@@ -712,6 +712,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcList:
   - NPC1
+  - NPC2
 --- !u!4 &1654187778
 Transform:
   m_ObjectHideFlags: 0

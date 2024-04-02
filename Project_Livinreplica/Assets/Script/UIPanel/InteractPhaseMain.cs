@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class InteractPhaseMain : BasePanel
 {
+    /// <summary>
+    /// panel for defualt interaction page
+    /// </summary>
     private static string name = "InteractPhaseMain";
     private static string path = "Panel/InteractPhaseMain";
 
@@ -18,8 +21,9 @@ public class InteractPhaseMain : BasePanel
     public override void OnStart()
     {
         base.OnStart();
-        List<string> list = UI_Method.GetInstance().GetNPCList();
-        GameObject panel = UI_Method.GetInstance().FindObjectInChild(ActiveObj, "NPCList");
+        List<string> list = UI_Method.GetInstance().GetNPCList();    //Load Npc interact button list info
+        Debug.Log(list.Count);
+        GameObject panel = UI_Method.GetInstance().FindObjectInChild(ActiveObj, "NPCList");  //get 
         GameObject optionButton = Resources.Load<GameObject>("Panel/OptionButton");
         Dictionary<string,GameObject> npcButton = UI_Method.GetInstance().InstantiateNPCListButton(list, panel, optionButton);
         foreach(GameObject buttonOBJ in npcButton.Values)
