@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class StartPanel : BasePanel
+public class GameStartPanel : BasePanel
 {
     private static string name = "StartPanel";
     private static string path = "Panel/JiUPanel/GameStartPanel";
 
     public static readonly UI_Type uI_Type = new UI_Type(path, name);
 
-    public StartPanel() : base(uI_Type)
+    public GameStartPanel() : base(uI_Type)
     {
 
     }
