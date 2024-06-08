@@ -16,6 +16,7 @@ public class PlayerAttackCombo1State : PlayerAttackState
     public override void Enter()
     {
         base.Enter();
+        ComboChange();
         //StartAnimation(stateMachine.Player.AnimationData.AttackCombo1ParHash);
         AttackAnimIndexChange(stateMachine.Player.AnimationData.AttackCombo1ParHash, attackCountIndex);
         lastCountIndex = attackCountIndex;
@@ -37,7 +38,7 @@ public class PlayerAttackCombo1State : PlayerAttackState
         {
             if(inputCount== 0)
             {
-                if (attackCountIndex == attackData.AttackCombo1Force.Length - 1)
+                if (attackCountIndex == attackData.AttackCombo1Detail.Length - 1)
                 {
                     attackCountIndex = 0;
                     ComboChange();
@@ -60,7 +61,9 @@ public class PlayerAttackCombo1State : PlayerAttackState
 
     protected void ComboChange()
     {
-        stateMachine.ReusableData.AttackForce = attackData.AttackCombo1Force[attackCountIndex];
+        stateMachine.ReusableData.AttackForce = attackData.AttackCombo1Detail[attackCountIndex].AttackMoveForce;
+        stateMachine.Player.currentAttackDamage = attackData.AttackCombo1Detail[attackCountIndex].Damage;
+        stateMachine.Player.targetTakeDamAnim = attackData.AttackCombo1Detail[attackCountIndex].CorrespondAnimation;
     }
 
     public override void AnimationEnterEvent()

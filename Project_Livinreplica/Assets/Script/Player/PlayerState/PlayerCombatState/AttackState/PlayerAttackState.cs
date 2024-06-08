@@ -14,6 +14,7 @@ public class PlayerAttackState : PlayerState
 
     protected PlayerAttackData attackData;
 
+    protected EnemyTakeDamageState targetEnemyState;
     public PlayerAttackState(PlayerMovementStateMachine playerMovementStateMachine) 
     {
         stateMachine= playerMovementStateMachine;
@@ -80,6 +81,8 @@ public class PlayerAttackState : PlayerState
     {
         stateMachine.Player.Rb.velocity = Vector2.zero;
     }
+
+
     #endregion
 
     #region Input Methods

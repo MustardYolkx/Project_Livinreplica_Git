@@ -12,7 +12,9 @@ public class PlayerAirAttack : PlayerAttackState
     public override void Enter()
     {
         base.Enter();
-        stateMachine.Player.Rb.AddForce(attackData.AirAttackForce * Vector2.up, ForceMode2D.Impulse);
+        attackCountIndex= 0;
+        ChangeValue();
+        stateMachine.Player.Rb.AddForce(attackData.AirAttackDetail[attackCountIndex].AttackMoveForce , ForceMode2D.Impulse);
         StartAnimation(stateMachine.Player.AnimationData.AirAttackParHash);
     }
 
@@ -28,6 +30,12 @@ public class PlayerAirAttack : PlayerAttackState
     public override void AnimationTransitionEvent()
     {
         stateMachine.ChangeState(stateMachine.IdleState);
+    }
+
+    public void ChangeValue()
+    {
+        stateMachine.Player.currentAttackDamage = attackData.AirAttackDetail[attackCountIndex].Damage;
+        stateMachine.Player.targetTakeDamAnim = attackData.AirAttackDetail[attackCountIndex].CorrespondAnimation;
     }
     #endregion
 }

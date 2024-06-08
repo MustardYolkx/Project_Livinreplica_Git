@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerInput))]
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour,IDamagable
 {
     [field: Header("Reference")]
     [field:SerializeField] public PlayerSO data { get; private set; }
@@ -28,7 +28,9 @@ public class Player : MonoBehaviour
 
     public PlayerInput playerInput { get; private set; }
 
-    
+    public PlayerAttackCheck attackCheck { get; private set; }
+    [HideInInspector]public float currentAttackDamage;
+    [HideInInspector] public string targetTakeDamAnim;
     private void Awake()
     {
         MovementStateMachine = new PlayerMovementStateMachine(this);
@@ -38,6 +40,7 @@ public class Player : MonoBehaviour
         ResizableBox2DCollider = GetComponent<PlayerResizableBox2DCollider>();
         
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        attackCheck = GetComponentInChildren<PlayerAttackCheck>();  
     }
     // Start is called before the first frame update
     void Start()
@@ -88,16 +91,17 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         MovementStateMachine.OnTriggerEnter(collision);
-        
+        attackCheck.AddDetected(collision);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
 
-            MovementStateMachine.OnTriggerExit(collision);
-        
-        
+         MovementStateMachine.OnTriggerExit(collision);
+        attackCheck.RemoveDetected(collision);
+
     }
+    #region Animation Methods
     public void AnimationTransitionEvent()
     {
         MovementStateMachine.AnimationTransitionEvent();
@@ -122,4 +126,26 @@ public class Player : MonoBehaviour
     {
         MovementStateMachine.AnimationComboStopEvent();
     }
+
+
+    #endregion
+
+    #region Take Damage
+    public void TakeDamage(string animationName, float Damage)
+    {
+        if (MovementStateMachine.ReusableData.CanTakeDamage)
+        {
+            if (animationName == "TakeDamageNormal")
+            {
+                MovementStateMachine.ChangeState(MovementStateMachine.TakeDamageNormalState);
+            }
+            //else if (animationName == "TakeDamageHard")
+            //{
+            //    MovementStateMachine.ChangeState(MovementStateMachine.TakeDamageHardState);
+
+            //}
+            Debug.Log("Player Take Damage:" + Damage);
+        }
+    }
+    #endregion
 }

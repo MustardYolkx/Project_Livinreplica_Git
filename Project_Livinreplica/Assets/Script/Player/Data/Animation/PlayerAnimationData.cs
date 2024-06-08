@@ -15,6 +15,7 @@ public class PlayerAnimationData
     [SerializeField] private string dashingParaName = "Dashing";
     [SerializeField] private string airborneParaName = "Airborne";
     [SerializeField] private string attackParaName = "Attack";
+    [SerializeField] private string takeDamageParaName = "TakeDamage";
     [Header("Grounded Parameter Name")]
     [SerializeField] private string idleParaName = "IsIdle";
     [SerializeField] private string walkParaName = "IsWalk";
@@ -35,6 +36,11 @@ public class PlayerAnimationData
     
     [SerializeField] private string attackCombo1ParaName = "AttackCombo1";
     [SerializeField] private string airAttackParaName = "AirAttack";
+
+    [Header("Take Damage Parameter Name")]
+
+    [SerializeField] private string takeDamageNormalParaName = "TakeDamageNormal";
+    [SerializeField] private string takeDamageHardParaName = "TakeDamageHard";
     public int GroundedParHash { get; private set; }
     public int MovingParHash { get; private set; }
     public int LandingParHash { get; private set; }
@@ -58,6 +64,10 @@ public class PlayerAnimationData
     public int MovementParHash { get; private set; }
 
     public int AirAttackParHash { get; private set; }
+    public int TakeDamageParHash { get; private set; }
+    public int TakeDamageNormalParHash { get; private set; }
+    public int TakeDamageHardParHash { get; private set; }
+
     public void Initialize()
     {
         GroundedParHash = Animator.StringToHash(groundParaName);
@@ -81,6 +91,9 @@ public class PlayerAnimationData
         AttackParHash = Animator.StringToHash(attackParaName);
         MovementParHash = Animator.StringToHash(movementParaName);
         AirAttackParHash = Animator.StringToHash(airAttackParaName);
+        TakeDamageParHash = Animator.StringToHash(takeDamageParaName);
+        TakeDamageNormalParHash = Animator.StringToHash(takeDamageNormalParaName);
+        TakeDamageHardParHash = Animator.StringToHash(takeDamageHardParaName);
     }
 
 }

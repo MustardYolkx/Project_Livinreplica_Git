@@ -25,6 +25,10 @@ public class PlayerMovementStateMachine :PlayerStateMachine
 
     public PlayerAirAttack AirAttack { get; }
 
+    public PlayerTakeDamageNormalState TakeDamageNormalState { get; }
+
+    
+
 
     public PlayerMovementStateMachine(Player player)
     {
@@ -44,6 +48,7 @@ public class PlayerMovementStateMachine :PlayerStateMachine
         AttackState= new PlayerAttackState(this);
         AttackCombo1 = new PlayerAttackCombo1State(this);
         AirAttack= new PlayerAirAttack(this);
+        TakeDamageNormalState= new PlayerTakeDamageNormalState(this);
     }
 
 

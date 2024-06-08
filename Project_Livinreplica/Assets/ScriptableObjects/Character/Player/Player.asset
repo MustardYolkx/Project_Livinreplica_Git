@@ -30,7 +30,18 @@ MonoBehaviour:
     <JumpRunSpeedModifier>k__BackingField: 0.8
     <JumpForceAdd>k__BackingField: 5
   <AttackData>k__BackingField:
-    <AttackCombo1Force>k__BackingField:
-    - 0.5
-    - 0.5
     AirAttackForce: 15
+    <AttackCombo1Detail>k__BackingField:
+    - Name: Combo1.0
+      Damage: 5
+      AttackMoveForce: {x: 0, y: 0}
+      CorrespondAnimation: TakeDamageNormal
+    - Name: Combo1.1
+      Damage: 10
+      AttackMoveForce: {x: 0, y: 0}
+      CorrespondAnimation: TakeDamageNormal
+    <AirAttackDetail>k__BackingField:
+    - Name: Air Attack
+      Damage: 15
+      AttackMoveForce: {x: 0, y: 15}
+      CorrespondAnimation: TakeDamageHard

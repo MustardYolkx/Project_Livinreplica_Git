@@ -8,6 +8,7 @@ public class PlayerStateMachine
 {
     protected PlayerState currentState { get; private set; }
 
+
     public void ChangeState(PlayerState playerState)
     {
         

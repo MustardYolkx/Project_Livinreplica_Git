@@ -6,7 +6,23 @@ using UnityEngine;
 [Serializable]
 public class PlayerAttackData 
 {
-    [field:SerializeField] public float[] AttackCombo1Force { get;private set; }
+   
 
     [field: SerializeField] public float AirAttackForce;
+
+    [field: SerializeField] public AttackDetails[] AttackCombo1Detail { get; private set; }
+
+    [field: SerializeField] public AttackDetails[] AirAttackDetail { get; private set; }
+
+
 }
+[Serializable]
+public struct AttackDetails
+{
+    public string Name;
+    public float Damage;
+    public Vector2 AttackMoveForce;
+    public string CorrespondAnimation;
+    
+}
+

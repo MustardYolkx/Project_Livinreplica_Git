@@ -25,5 +25,7 @@ public class PlayerReusableStateData
 
     public bool CanCombo { get; set; }
 
-    public float AttackForce { get; set; }
+    public bool CanTakeDamage { get; set; } = true;
+
+    public Vector2 AttackForce { get; set; }
 }
