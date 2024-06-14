@@ -23,6 +23,7 @@ public class PlayerReusableStateData
 
     public bool IsSprinting { get; set; }
 
+    public bool IsCrouch { get; set; }
     public bool CanCombo { get; set; }
 
     public bool CanTakeDamage { get; set; } = true;

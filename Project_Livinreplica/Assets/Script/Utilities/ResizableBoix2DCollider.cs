@@ -71,6 +71,12 @@ public class ResizableBoix2DCollider : MonoBehaviour
         Box2DColliderData.Collider.offset = newColliderCenter;
     }
 
+    public void RecalculateColliderThroughHeight(float height,float center)
+    {
+        Box2DColliderData.Collider.size = new Vector2(DefaultColliderData.Width, height);
+        float colliderHeightDifference = DefaultColliderData.Height - Box2DColliderData.Collider.size.y;
+        Box2DColliderData.Collider.offset = new Vector2(0, center+ (colliderHeightDifference / 2f));
+    }
     //public void RecalculateColliderRadius()
     //{
     //    float halfColliderHeight = Box2DColliderData.Collider.size.y / 2f;

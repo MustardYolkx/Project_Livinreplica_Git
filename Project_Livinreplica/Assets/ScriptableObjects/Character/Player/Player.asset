@@ -40,8 +40,17 @@ MonoBehaviour:
       Damage: 10
       AttackMoveForce: {x: 0, y: 0}
       CorrespondAnimation: TakeDamageNormal
+    - Name: Combo1.2
+      Damage: 13
+      AttackMoveForce: {x: 0, y: 0}
+      CorrespondAnimation: TakeDamageNormal
     <AirAttackDetail>k__BackingField:
     - Name: Air Attack
       Damage: 15
       AttackMoveForce: {x: 0, y: 15}
       CorrespondAnimation: TakeDamageHard
+    <CrouchAttackDetail>k__BackingField:
+    - Name: Crouch Attack
+      Damage: 3
+      AttackMoveForce: {x: 0, y: 0}
+      CorrespondAnimation: TakeDamageNormal

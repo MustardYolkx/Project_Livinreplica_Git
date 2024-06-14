@@ -14,6 +14,8 @@ public class PlayerAttackData
 
     [field: SerializeField] public AttackDetails[] AirAttackDetail { get; private set; }
 
+    [field: SerializeField] public AttackDetails[] CrouchAttackDetail { get; private set; }
+
 
 }
 [Serializable]

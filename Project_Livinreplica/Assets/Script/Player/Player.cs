@@ -17,6 +17,8 @@ public class Player : MonoBehaviour,IDamagable
 
     
     public PlayerResizableBox2DCollider ResizableBox2DCollider { get; private set; }
+
+    
     public Animator Animator { get; private set; }
     public Rigidbody2D Rb{ get; private set; }
     
@@ -29,8 +31,12 @@ public class Player : MonoBehaviour,IDamagable
     public PlayerInput playerInput { get; private set; }
 
     public PlayerAttackCheck attackCheck { get; private set; }
+
+    public Collider2D Collider { get; private set; }
     [HideInInspector]public float currentAttackDamage;
     [HideInInspector] public string targetTakeDamAnim;
+
+
     private void Awake()
     {
         MovementStateMachine = new PlayerMovementStateMachine(this);
@@ -38,7 +44,7 @@ public class Player : MonoBehaviour,IDamagable
         Animator = GetComponentInChildren<Animator>();
         Rb= GetComponent<Rigidbody2D>();
         ResizableBox2DCollider = GetComponent<PlayerResizableBox2DCollider>();
-        
+        Collider = GetComponent<Collider2D>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         attackCheck = GetComponentInChildren<PlayerAttackCheck>();  
     }
@@ -84,8 +90,7 @@ public class Player : MonoBehaviour,IDamagable
 
     private void ChangeColliderSize()
     {
-        //Col.offset = new Vector2(offsetX,offsetY);
-        //Col.size = new Vector2( boundsX,boundsY);
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -146,6 +151,13 @@ public class Player : MonoBehaviour,IDamagable
             //}
             Debug.Log("Player Take Damage:" + Damage);
         }
+    }
+    #endregion
+
+    #region Rigidbody
+    public void TurnOffRB()
+    {
+        
     }
     #endregion
 }

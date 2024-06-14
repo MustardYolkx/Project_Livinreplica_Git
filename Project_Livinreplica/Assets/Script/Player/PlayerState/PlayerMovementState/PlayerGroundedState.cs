@@ -37,6 +37,7 @@ public class PlayerGroundedState : PlayerMovementState
     #region Main Methods
     private void OnCrouch(InputAction.CallbackContext context)
     {
+        stateMachine.ReusableData.IsCrouch = true;
         stateMachine.ChangeState(stateMachine.CrouchState);
     }
     
@@ -44,6 +45,21 @@ public class PlayerGroundedState : PlayerMovementState
     {
         
         stateMachine.ChangeState(stateMachine.JumpRunStart);
+    }
+    protected virtual void OnFall()
+    {
+        stateMachine.ChangeState(stateMachine.Falling);
+    }
+
+    protected override void OnSprint(InputAction.CallbackContext obj)
+    {
+        if (stateMachine.ReusableData.MovementInput == Vector2.zero)
+        {
+            stateMachine.ChangeState(stateMachine.SprintBackward);
+            return;
+        }
+
+        stateMachine.ChangeState(stateMachine.SprintForward);
     }
     #endregion
 
@@ -81,21 +97,7 @@ public class PlayerGroundedState : PlayerMovementState
         
         return overlappedGroundColliders.Length > 0;
     }
-    protected virtual void OnFall()
-    {
-        stateMachine.ChangeState(stateMachine.Falling);
-    }
-
-    protected override void OnSprint(InputAction.CallbackContext obj)
-    {
-        if (stateMachine.ReusableData.MovementInput == Vector2.zero)
-        {
-            stateMachine.ChangeState(stateMachine.SprintBackward);
-            return;
-        }
-
-        stateMachine.ChangeState(stateMachine.SprintForward);
-    }
+   
 
 
     #endregion

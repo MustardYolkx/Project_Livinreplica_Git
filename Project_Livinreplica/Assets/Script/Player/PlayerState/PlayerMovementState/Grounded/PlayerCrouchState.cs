@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,11 +13,12 @@ public class PlayerCrouchState : PlayerGroundedState
     public override void Enter()
     {
         base.Enter();
+        StartAnimation(stateMachine.Player.AnimationData.CrouchParHash);
         stateMachine.ReusableData.CanFlip = false;
         stateMachine.ReusableData.MovementSpeedModifier = 0f;
-
+        stateMachine.Player.ResizableBox2DCollider.RecalculateColliderThroughHeight(stateMachine.Player.ResizableBox2DCollider.DefaultColliderData.CrouchHeight, stateMachine.Player.ResizableBox2DCollider.DefaultColliderData.CrouchCenterY);
         ResetVelocity();
-        StartAnimation(stateMachine.Player.AnimationData.CrouchParHash);
+        
     }
 
     public override void LogicUpdate()
@@ -29,6 +31,7 @@ public class PlayerCrouchState : PlayerGroundedState
     {
         base.Exit();
         stateMachine.ReusableData.CanFlip = true;
+        stateMachine.Player.ResizableBox2DCollider.RecalculateColliderThroughHeight(stateMachine.Player.ResizableBox2DCollider.DefaultColliderData.Height, stateMachine.Player.ResizableBox2DCollider.DefaultColliderData.CenterY);
         StopAnimation(stateMachine.Player.AnimationData.CrouchParHash);
     }
 
@@ -47,19 +50,28 @@ public class PlayerCrouchState : PlayerGroundedState
             stateMachine.ChangeState(stateMachine.WalkState);
         }
     }
+    private void CrouchAttack(InputAction.CallbackContext obj)
+    {
+
+        stateMachine.ChangeState(stateMachine.PlayerCrouchAttack);
+    }
     #endregion
 
     #region Input Methods
     protected override void AddInputActionCallBacks()
     {
-        base.AddInputActionCallBacks();
+        
         stateMachine.Player.playerInput.PlayerActions.Crouch.canceled += LeaveCrouch;
+        stateMachine.Player.playerInput.PlayerActions.Attack.started += CrouchAttack;
     }
+
+    
 
     protected override void RemoveInputActionCallBacks()
     {
-        base.RemoveInputActionCallBacks();
+        
         stateMachine.Player.playerInput.PlayerActions.Crouch.canceled -= LeaveCrouch;
+        stateMachine.Player.playerInput.PlayerActions.Attack.started -= CrouchAttack;
     }
     #endregion
 

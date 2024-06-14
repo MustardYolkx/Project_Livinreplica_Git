@@ -22,6 +22,7 @@ public class PlayerAttackCheck : MonoBehaviour
         foreach(IDamagable item in detectedDamagable)
         {
             item.TakeDamage(player.targetTakeDamAnim,player.currentAttackDamage);
+            //Debug.Log("Hit");
         }
     }
     public void AddDetected(Collider2D collider)
@@ -32,6 +33,7 @@ public class PlayerAttackCheck : MonoBehaviour
             if (damagableItem != null)
             {
                 detectedDamagable.Add(damagableItem);
+                Debug.Log("Add");
 
             }
         }
