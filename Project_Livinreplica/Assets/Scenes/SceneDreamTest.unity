@@ -1007,14 +1007,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4196298592922118551, guid: eeb35accb5af2924dbaaf68718195966, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.23
-      objectReference: {fileID: 0}
-    - target: {fileID: 4196298592922118551, guid: eeb35accb5af2924dbaaf68718195966, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.27
-      objectReference: {fileID: 0}
     - target: {fileID: 7045434154947135503, guid: eeb35accb5af2924dbaaf68718195966, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.29
@@ -1058,62 +1050,6 @@ PrefabInstance:
     - target: {fileID: 7586974283136505699, guid: eeb35accb5af2924dbaaf68718195966, type: 3}
       propertyPath: m_Name
       value: BoxerBoss
-      objectReference: {fileID: 0}
-    - target: {fileID: 7827857608637571038, guid: eeb35accb5af2924dbaaf68718195966, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 7827857608637571038, guid: eeb35accb5af2924dbaaf68718195966, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 7980409261223040160, guid: eeb35accb5af2924dbaaf68718195966, type: 3}
-      propertyPath: m_Size.x
-      value: 1.7219089
-      objectReference: {fileID: 0}
-    - target: {fileID: 7980409261223040160, guid: eeb35accb5af2924dbaaf68718195966, type: 3}
-      propertyPath: m_Size.y
-      value: 2.7734451
-      objectReference: {fileID: 0}
-    - target: {fileID: 7980409261223040160, guid: eeb35accb5af2924dbaaf68718195966, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.27986318
-      objectReference: {fileID: 0}
-    - target: {fileID: 7980409261223040160, guid: eeb35accb5af2924dbaaf68718195966, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.32113934
-      objectReference: {fileID: 0}
-    - target: {fileID: 7993984374738714430, guid: eeb35accb5af2924dbaaf68718195966, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.94
-      objectReference: {fileID: 0}
-    - target: {fileID: 7993984374738714430, guid: eeb35accb5af2924dbaaf68718195966, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8242158176011710574, guid: eeb35accb5af2924dbaaf68718195966, type: 3}
-      propertyPath: enemySO
-      value: 
-      objectReference: {fileID: 11400000, guid: 3a994b8fffb30984f930a851722ec2bb, type: 2}
-    - target: {fileID: 8242158176011710574, guid: eeb35accb5af2924dbaaf68718195966, type: 3}
-      propertyPath: boxerBossSO
-      value: 
-      objectReference: {fileID: 11400000, guid: 3a994b8fffb30984f930a851722ec2bb, type: 2}
-    - target: {fileID: 8533911882237098176, guid: eeb35accb5af2924dbaaf68718195966, type: 3}
-      propertyPath: m_Size.x
-      value: 1.452419
-      objectReference: {fileID: 0}
-    - target: {fileID: 8533911882237098176, guid: eeb35accb5af2924dbaaf68718195966, type: 3}
-      propertyPath: m_Size.y
-      value: 3.0147176
-      objectReference: {fileID: 0}
-    - target: {fileID: 8533911882237098176, guid: eeb35accb5af2924dbaaf68718195966, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.67628264
-      objectReference: {fileID: 0}
-    - target: {fileID: 8533911882237098176, guid: eeb35accb5af2924dbaaf68718195966, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.41173762
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
