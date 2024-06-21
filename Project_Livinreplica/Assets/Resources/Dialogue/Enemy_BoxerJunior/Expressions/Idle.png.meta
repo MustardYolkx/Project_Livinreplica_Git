@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3708ebfd9da231e4790b3580ab6d4bdc
+guid: ebbb47f5834c6f342b628048d46f1ce4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,70 +121,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Hero-Boxer-Punch-ola_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 70
-        height: 45
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bdfa3685dbb5b9541b9e931841105af6
-      internalID: -609659877
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hero-Boxer-Punch-ola_1
-      rect:
-        serializedVersion: 2
-        x: 70
-        y: 0
-        width: 70
-        height: 45
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f4f0d395c02beda4080d4bcf9def5048
-      internalID: 348350782
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hero-Boxer-Punch-ola_2
-      rect:
-        serializedVersion: 2
-        x: 140
-        y: 0
-        width: 70
-        height: 45
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ed46566433b73d443830ac48811f1803
-      internalID: 1951076178
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -195,10 +132,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Hero-Boxer-Punch-ola_0: -609659877
-      Hero-Boxer-Punch-ola_1: 348350782
-      Hero-Boxer-Punch-ola_2: 1951076178
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

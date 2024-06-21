@@ -11,6 +11,8 @@ public class Enemy_BoxJunior : Enemy,IDamagable
     public BoxerJunior_TakeDamage BoxerJuniorTakeDamage { get; private set; }
 
     public BoxerJunior_CombatWalk BoxerJunior_CombatWalk { get; private set; }
+
+    public BoxerJuniorDialogue BoxerJunior_Dialogue { get; private set; }
     #endregion
     // Start is called before the first frame update
     private new void Awake()
@@ -56,17 +58,22 @@ public class Enemy_BoxJunior : Enemy,IDamagable
             {
 
                 stateMachine.ChangeState(BoxerJuniorTakeDamage);
-                Debug.Log("Taka Damage:" + Damage);
+                Debug.Log("Enemy Taka Damage:" + Damage);
                 
             }
             else if (animationName == "TakeDamageHard")
             {
                 stateMachine.ChangeState(BoxerJuniorTakeDamage);
-                Debug.Log("Taka Damage:" + Damage);
+                Debug.Log("Enemy Taka Damage:" + Damage);
 
             }
 
         }
 
+    }
+
+    public override void ChangeToCombatState()
+    {
+        stateMachine.ChangeState(BoxerJuniorCombatIdle);
     }
 }

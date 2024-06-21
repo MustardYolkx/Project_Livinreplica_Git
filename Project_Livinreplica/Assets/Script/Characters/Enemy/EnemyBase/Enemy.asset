@@ -31,6 +31,7 @@ MonoBehaviour:
     <Attack1>k__BackingField:
     - Name: EnemyAttack1
       Damage: 4
+      coolDownTime: 0
       AttackMoveForce: {x: 0, y: 0}
       CorrespondAnimation: TakeDamageNormal
   <EnemyDetectedData>k__BackingField:

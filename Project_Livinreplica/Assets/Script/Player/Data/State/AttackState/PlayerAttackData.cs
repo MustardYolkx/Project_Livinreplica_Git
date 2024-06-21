@@ -16,7 +16,7 @@ public class PlayerAttackData
 
     [field: SerializeField] public AttackDetails[] CrouchAttackDetail { get; private set; }
 
-
+    [field: SerializeField] public AttackDetails[] SpecialAttackDetail { get; private set; }
 }
 [Serializable]
 public struct AttackDetails

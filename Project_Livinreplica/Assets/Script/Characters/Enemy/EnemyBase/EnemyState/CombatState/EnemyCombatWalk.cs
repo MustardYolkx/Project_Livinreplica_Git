@@ -46,8 +46,8 @@ public class EnemyCombatWalk : EnemyCombatState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
-
-        enemy.Rb.AddForce(enemy.enemySO.EnemyData.WalkSpeed * enemy.transform.right, ForceMode2D.Force);
+        Vector3 horizontalPlayerVelocity = GetHorizontalVelocity();
+        enemy.Rb.AddForce(enemy.enemySO.EnemyData.WalkSpeed * enemy.transform.right- horizontalPlayerVelocity, ForceMode2D.Force);
 
     }
     public override void Exit()

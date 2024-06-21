@@ -26,12 +26,16 @@ public class DialogDictionary
     }
 
     public NPC1_Dialogue npc1;
+    public BoxerJuniorDialogue boxerJunior;
 
     public DialogDictionary()
     {
         npc1 = new NPC1_Dialogue();
-        dict_dialogue = new Dictionary<string, BaseDialogue>();
-
-        dict_dialogue.Add("NPC1", npc1);
+        boxerJunior= new BoxerJuniorDialogue();
+        dict_dialogue = new Dictionary<string, BaseDialogue>
+        {
+            { "NPC1", npc1 },
+            {"Enemy_BoxerJunior", boxerJunior}
+        };
     }
 }

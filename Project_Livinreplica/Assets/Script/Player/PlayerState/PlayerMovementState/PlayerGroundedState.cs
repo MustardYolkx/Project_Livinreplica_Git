@@ -1,3 +1,4 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -61,6 +62,11 @@ public class PlayerGroundedState : PlayerMovementState
 
         stateMachine.ChangeState(stateMachine.SprintForward);
     }
+
+    private void OnSpecialAttack(InputAction.CallbackContext obj)
+    {
+        stateMachine.ChangeState(stateMachine.PlayerSpecialAttack);
+    }
     #endregion
 
     #region Reusable Methods
@@ -111,14 +117,18 @@ public class PlayerGroundedState : PlayerMovementState
        
         stateMachine.Player.playerInput.PlayerActions.Crouch.started += OnCrouch;
         stateMachine.Player.playerInput.PlayerActions.Attack.started += OnAttack;
+        stateMachine.Player.playerInput.PlayerActions.SpecialAttack.started += OnSpecialAttack;
 
     }
+
+
 
     protected override void RemoveInputActionCallBacks()
     {
         base.RemoveInputActionCallBacks();
         stateMachine.Player.playerInput.PlayerActions.Crouch.started -= OnCrouch;
         stateMachine.Player.playerInput.PlayerActions.Attack.started -= OnAttack;
+        stateMachine.Player.playerInput.PlayerActions.SpecialAttack.started -= OnSpecialAttack;
 
 
     }

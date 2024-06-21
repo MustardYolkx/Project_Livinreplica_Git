@@ -29,7 +29,7 @@ public class PlayerMovementStateMachine :PlayerStateMachine
 
     public PlayerCrouchAttack PlayerCrouchAttack { get; }
 
-
+    public PlayerSpecialAttack PlayerSpecialAttack { get; }
     public PlayerMovementStateMachine(Player player)
     {
         Player = player;
@@ -50,6 +50,7 @@ public class PlayerMovementStateMachine :PlayerStateMachine
         AirAttack= new PlayerAirAttack(this);
         TakeDamageNormalState= new PlayerTakeDamageNormalState(this);
         PlayerCrouchAttack= new PlayerCrouchAttack(this);
+        PlayerSpecialAttack= new PlayerSpecialAttack(this);
     }
 
 

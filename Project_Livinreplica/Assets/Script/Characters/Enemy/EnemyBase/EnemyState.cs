@@ -75,11 +75,13 @@ public class EnemyState
         {
             
             stateMachine.Enemy.transform.rotation = Quaternion.Euler(0, 0, 0);
+            
         }
         else if (stateMachine.Enemy.isFacingRight == false)
         {
             
             stateMachine.Enemy.transform.rotation = Quaternion.Euler(0, 180, 0);
+            
         }
     }
 
@@ -87,7 +89,13 @@ public class EnemyState
     {
         enemy.Rb.velocity = Vector2.zero;
     }
+    protected Vector2 GetHorizontalVelocity()
+    {
+        Vector2 horizontalVelocity = enemy.Rb.velocity;
 
+        horizontalVelocity.y = 0f;
+        return horizontalVelocity;
+    }
     protected void AttackCoolDownCount()
     {
         enemy.attackCoolDownTime -= Time.deltaTime;

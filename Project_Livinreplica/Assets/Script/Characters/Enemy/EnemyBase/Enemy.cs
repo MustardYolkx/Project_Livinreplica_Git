@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour,IDamagable
     public Animator Animator { get; private set; }
     
 
-    public bool canFlip { get; set; } 
+    public bool canFlip { get; set; } = true;
     public bool isFacingRight { get; set; } = true;
 
     [field: SerializeField] public bool canTakeDamage { get; set; } = true;
@@ -96,7 +96,49 @@ public class Enemy : MonoBehaviour,IDamagable
     {
         stateMachine.PhysicsUpdate();
     }
+    #region Main Methods
 
+    public virtual void ChangeToCombatState()
+    {
+
+    }
+    public void FaceToPlayer()
+    {
+        if (CheckPlayerInRange())
+        {
+
+            if (PlayerPos().x > transform.position.x)
+            {
+                isFacingRight = true;
+
+                Flip();
+                
+            }
+            else if (PlayerPos().x < transform.position.x)
+            {
+                isFacingRight = false;
+                Flip();
+            }
+        }
+
+    }
+
+    protected void Flip()
+    {
+        if (canFlip) 
+        { 
+            if (isFacingRight == true)
+            {
+                transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
+            else if (isFacingRight == false)
+            {
+
+                transform.rotation = Quaternion.Euler(0, 180, 0);
+            }
+        }
+    }
+    #endregion
     public void TakeDamage(string animationName, float Damage)
     {
         //if (canTakeDamage)

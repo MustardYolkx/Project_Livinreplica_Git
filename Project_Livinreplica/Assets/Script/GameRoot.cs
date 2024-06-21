@@ -22,6 +22,8 @@ public class GameRoot : MonoBehaviour
 
     private static GameRoot instance;
 
+    public Enemy CurrentTalkEnemy { get; set; }
+
     public static GameRoot GetInstance()
     {
         if(instance == null)
@@ -63,7 +65,7 @@ public class GameRoot : MonoBehaviour
         //Dialog_Dictionary.dict_dialogue.Add("NPC1", npc1);
         Debug.Log(Dialog_Dictionary_Root);
         #region Push First Panel
-        UIManager_Root.Push(new StartPanel());
+        //UIManager_Root.Push(new StartPanel());
 
         #endregion
     }

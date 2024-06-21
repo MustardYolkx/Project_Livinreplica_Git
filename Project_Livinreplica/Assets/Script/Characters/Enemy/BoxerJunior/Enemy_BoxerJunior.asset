@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Enemy_BoxerJunior
   m_EditorClassIdentifier: 
   <EnemyData>k__BackingField:
-    WalkSpeed: 80
+    WalkSpeed: 700
   <LayerData>k__BackingField:
     <GroundLayer>k__BackingField:
       serializedVersion: 2
@@ -31,6 +31,7 @@ MonoBehaviour:
     <Attack1>k__BackingField:
     - Name: Attack1
       Damage: 3
+      coolDownTime: 0
       AttackMoveForce: {x: 0, y: 0}
       CorrespondAnimation: TakeDamageNormal
   <EnemyDetectedData>k__BackingField:
