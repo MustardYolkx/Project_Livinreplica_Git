@@ -31,10 +31,11 @@ MonoBehaviour:
     <Attack1>k__BackingField:
     - Name: Attack1
       Damage: 6
+      coolDownTime: 0
       AttackMoveForce: {x: 0, y: 0}
       CorrespondAnimation: TakeDamageNormal
   <EnemyDetectedData>k__BackingField:
     <LedgeDetectDistance>k__BackingField: 0.4
     <GroundDetectDistance>k__BackingField: 0.4
     <PlayerDetectDistance>k__BackingField: 1
-    <CheckPlayerRadius>k__BackingField: 4
+    <CheckPlayerRadius>k__BackingField: 20

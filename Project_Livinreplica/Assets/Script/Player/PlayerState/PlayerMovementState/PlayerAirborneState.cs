@@ -40,4 +40,33 @@ public class PlayerAirborneState : PlayerMovementState
 
 
     #endregion
+    #region Input Methods
+    protected override void AddInputActionCallBacks()
+    {
+        base.AddInputActionCallBacks();
+
+        //stateMachine.Player.playerInput.PlayerActions.Jump.canceled += JumpCancel;
+        stateMachine.Player.playerInput.PlayerActions.Attack.started += OnAirAttack;
+    }
+
+
+
+    protected override void RemoveInputActionCallBacks()
+    {
+        base.RemoveInputActionCallBacks();
+
+        //stateMachine.Player.playerInput.PlayerActions.Jump.canceled -= JumpCancel;
+        stateMachine.Player.playerInput.PlayerActions.Attack.started -= OnAirAttack;
+    }
+
+    public override void AnimationComboStart()
+    {
+        stateMachine.ReusableData.CanCombo = true;
+    }
+
+    public override void AnimationComboStop()
+    {
+        stateMachine.ReusableData.CanCombo = false;
+    }
+    #endregion
 }

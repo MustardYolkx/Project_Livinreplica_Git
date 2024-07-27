@@ -47,7 +47,7 @@ MonoBehaviour:
     <AirAttackDetail>k__BackingField:
     - Name: Air Attack
       Damage: 15
-      AttackMoveForce: {x: 0, y: 15}
+      AttackMoveForce: {x: 0, y: 0}
       CorrespondAnimation: TakeDamageHard
     <CrouchAttackDetail>k__BackingField:
     - Name: Crouch Attack

@@ -11,7 +11,8 @@ public class PlayerSprintForward : PlayerDashState
     public override void Enter()
     {
         base.Enter();
-        ResetVelocity();
+        //ResetVelocity();
+        //TO DO:
         stateMachine.Player.playerInput.PlayerActions.Movement.Disable();
         stateMachine.Player.Rb.AddForce(stateMachine.ReusableData.CurrentSprintForce*stateMachine.Player.transform.right,ForceMode2D.Impulse);
         StartAnimation(stateMachine.Player.AnimationData.SprintForwardParHash);

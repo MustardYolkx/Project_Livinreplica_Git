@@ -29,7 +29,7 @@ public class PlayerAirAttack : PlayerAttackState
     #region Main Methods
     public override void AnimationTransitionEvent()
     {
-        stateMachine.ChangeState(stateMachine.IdleState);
+        stateMachine.ChangeState(stateMachine.Falling);
     }
 
     public void ChangeValue()

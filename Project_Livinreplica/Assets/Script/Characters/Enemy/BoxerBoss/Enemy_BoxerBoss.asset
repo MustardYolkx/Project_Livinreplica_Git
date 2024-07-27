@@ -33,7 +33,7 @@ MonoBehaviour:
     <LedgeDetectDistance>k__BackingField: 0.4
     <GroundDetectDistance>k__BackingField: 0.4
     <PlayerDetectDistance>k__BackingField: 4
-    <CheckPlayerRadius>k__BackingField: 10
+    <CheckPlayerRadius>k__BackingField: 20
   <BoxerBossAttackData>k__BackingField:
     <Attack1>k__BackingField: []
     <Combo1>k__BackingField:

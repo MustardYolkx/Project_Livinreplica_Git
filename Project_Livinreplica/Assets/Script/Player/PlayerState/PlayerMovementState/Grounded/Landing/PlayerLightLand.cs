@@ -35,4 +35,13 @@ public class PlayerLightLand : PlayerLandingState
     {
         stateMachine.ChangeState(stateMachine.IdleState);
     }
+    public override void AnimationComboStart()
+    {
+        stateMachine.ReusableData.CanCombo = true;
+    }
+
+    public override void AnimationComboStop()
+    {
+        stateMachine.ReusableData.CanCombo = false;
+    }
 }

@@ -49,13 +49,16 @@ public class PlayerRunState : PlayerMovingState
     {
         base.AddInputActionCallBacks();
         stateMachine.Player.playerInput.PlayerActions.Jump.started += JumpRunStart;
+        stateMachine.Player.playerInput.PlayerActions.Jump.started += JumpStart;
     }
 
     protected override void RemoveInputActionCallBacks()
     {
         base.RemoveInputActionCallBacks();
         stateMachine.Player.playerInput.PlayerActions.Jump.started -= JumpRunStart;
+        stateMachine.Player.playerInput.PlayerActions.Jump.started -= JumpStart;
     }
+
 
     #endregion
 }

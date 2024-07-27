@@ -64,9 +64,9 @@ public class PlayerJumpLightStart : PlayerAirborneState
     protected override void AddInputActionCallBacks()
     {
         base.AddInputActionCallBacks();
-        
+
         stateMachine.Player.playerInput.PlayerActions.Jump.canceled += JumpCancel;
-        stateMachine.Player.playerInput.PlayerActions.Attack.started += OnAirAttack;
+        //stateMachine.Player.playerInput.PlayerActions.Attack.started += OnAirAttack;
     }
 
 
@@ -74,9 +74,9 @@ public class PlayerJumpLightStart : PlayerAirborneState
     protected override void RemoveInputActionCallBacks()
     {
         base.RemoveInputActionCallBacks();
-        
+
         stateMachine.Player.playerInput.PlayerActions.Jump.canceled -= JumpCancel;
-        stateMachine.Player.playerInput.PlayerActions.Attack.started -= OnAirAttack;
+        //stateMachine.Player.playerInput.PlayerActions.Attack.started -= OnAirAttack;
     }
 
     public override void AnimationComboStart()
