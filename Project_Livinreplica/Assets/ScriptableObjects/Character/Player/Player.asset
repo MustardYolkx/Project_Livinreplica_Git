@@ -22,11 +22,11 @@ MonoBehaviour:
     <SprintData>k__BackingField:
       <SprintForce>k__BackingField: 10
   <AirbornedData>k__BackingField:
-    <JumpForceStay>k__BackingField: {x: 0, y: 10}
-    <JumpStaySpeedModifier>k__BackingField: 0.3
-    <JumpForceNormal>k__BackingField: {x: 5, y: 10}
+    <JumpForceStay>k__BackingField: {x: 0, y: 0}
+    <JumpStaySpeedModifier>k__BackingField: 1
+    <JumpForceNormal>k__BackingField: {x: 0, y: 5}
     <JumpNormalSpeedModifier>k__BackingField: 0.3
-    <JumpForceRun>k__BackingField: {x: 20, y: 13}
+    <JumpForceRun>k__BackingField: {x: 20, y: 8}
     <JumpRunSpeedModifier>k__BackingField: 0.8
     <JumpForceAdd>k__BackingField: 5
   <AttackData>k__BackingField:
@@ -46,7 +46,7 @@ MonoBehaviour:
       CorrespondAnimation: TakeDamageNormal
     <AirAttackDetail>k__BackingField:
     - Name: Air Attack
-      Damage: 15
+      Damage: 8
       AttackMoveForce: {x: 0, y: 0}
       CorrespondAnimation: TakeDamageHard
     <CrouchAttackDetail>k__BackingField:
