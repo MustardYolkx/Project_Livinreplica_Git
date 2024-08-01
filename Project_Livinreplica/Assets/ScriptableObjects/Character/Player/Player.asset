@@ -23,12 +23,12 @@ MonoBehaviour:
       <SprintForce>k__BackingField: 10
   <AirbornedData>k__BackingField:
     <JumpForceStay>k__BackingField: {x: 0, y: 0}
-    <JumpStaySpeedModifier>k__BackingField: 1
-    <JumpForceNormal>k__BackingField: {x: 0, y: 5}
+    <JumpStaySpeedModifier>k__BackingField: 0
+    <JumpForceNormal>k__BackingField: {x: 1, y: 0}
     <JumpNormalSpeedModifier>k__BackingField: 0.3
-    <JumpForceRun>k__BackingField: {x: 20, y: 8}
+    <JumpForceRun>k__BackingField: {x: 1, y: 0}
     <JumpRunSpeedModifier>k__BackingField: 0.8
-    <JumpForceAdd>k__BackingField: 5
+    <JumpForceAdd>k__BackingField: 4.5
   <AttackData>k__BackingField:
     AirAttackForce: 15
     <AttackCombo1Detail>k__BackingField:
