@@ -30,6 +30,7 @@ public class PlayerSpecialAttack : PlayerAttackState
     {
         stateMachine.Player.currentAttackDamage = attackData.SpecialAttackDetail[attackCountIndex].Damage;
         stateMachine.Player.targetTakeDamAnim = attackData.SpecialAttackDetail[attackCountIndex].CorrespondAnimation;
+        stateMachine.Player.currentDamageForce = attackData.AttackCombo1Detail[attackCountIndex].DamageForce;
     }
 
     private void StopSpecialAttack(InputAction.CallbackContext obj)

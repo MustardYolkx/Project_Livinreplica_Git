@@ -6,6 +6,7 @@ public class ResizableBoix2DCollider : MonoBehaviour
 {
     public Box2DColliderData Box2DColliderData { get; private set; }
     [field: SerializeField] public DefaultColliderData DefaultColliderData { get; private set; }
+    [field: SerializeField] public PlayerTriggerColliderData TriggerColliderData { get; private set; }
     //[field: SerializeField] public SlopeData SlopeData { get; private set; }
 
     private void Awake()
@@ -20,12 +21,12 @@ public class ResizableBoix2DCollider : MonoBehaviour
 
     public void Resize()
     {
-        Initialize(gameObject);
+        Initialize(gameObject,TriggerColliderData.TakeDamageCollider.gameObject);
 
         CalculateCapsuleColliderDimensions();
     }
 
-    public void Initialize(GameObject gameObject)
+    public void Initialize(GameObject gameObject,GameObject takeDamageCollider)
     {
         if (Box2DColliderData != null)
         {
@@ -34,7 +35,7 @@ public class ResizableBoix2DCollider : MonoBehaviour
 
         Box2DColliderData = new Box2DColliderData();
 
-        Box2DColliderData.Initialize(gameObject);
+        Box2DColliderData.Initialize(gameObject,takeDamageCollider);
 
         OnInitialize();
     }
@@ -59,6 +60,7 @@ public class ResizableBoix2DCollider : MonoBehaviour
     public void SetCapsuleColliderSize(float width, float height)
     {
         Box2DColliderData.Collider.size = new Vector2(width, height);
+        Box2DColliderData.TakeDamageCollider.size = new Vector2(width, height);
     }
 
 
@@ -69,13 +71,16 @@ public class ResizableBoix2DCollider : MonoBehaviour
         Vector2 newColliderCenter = new Vector2(0f, DefaultColliderData.CenterY + (colliderHeightDifference / 2f));
 
         Box2DColliderData.Collider.offset = newColliderCenter;
+        Box2DColliderData.TakeDamageCollider.offset = newColliderCenter;
     }
 
     public void RecalculateColliderThroughHeight(float height,float center)
     {
         Box2DColliderData.Collider.size = new Vector2(DefaultColliderData.Width, height);
+        Box2DColliderData.TakeDamageCollider.size = new Vector2(DefaultColliderData.Width, height);
         float colliderHeightDifference = DefaultColliderData.Height - Box2DColliderData.Collider.size.y;
         Box2DColliderData.Collider.offset = new Vector2(0, center+ (colliderHeightDifference / 2f));
+        Box2DColliderData.TakeDamageCollider.size = new Vector2(0, center + (colliderHeightDifference / 2f));
     }
     //public void RecalculateColliderRadius()
     //{

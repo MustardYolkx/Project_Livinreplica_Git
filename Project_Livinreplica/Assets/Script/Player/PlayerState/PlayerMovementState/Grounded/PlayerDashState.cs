@@ -13,9 +13,11 @@ public class PlayerDashState : PlayerMovementState
     {
         base.Enter();
         stateMachine.ReusableData.IsSprinting= true;
-        stateMachine.Player.Collider.enabled = false;
-        gravityScale = stateMachine.Player.Rb.gravityScale;
-        ChangeGravityScale(0);
+        //stateMachine.Player.Collider.enabled = false;
+        stateMachine.Player.gameObject.layer = SetGameobjectLayer("Player_Sprint");
+        stateMachine.Player.takeDamageTrigger.SetActive(false);
+        //gravityScale = stateMachine.Player.Rb.gravityScale;
+        //ChangeGravityScale(0);
         StartAnimation(stateMachine.Player.AnimationData.DashingParHash);
     }
 
@@ -23,8 +25,10 @@ public class PlayerDashState : PlayerMovementState
     {
         base.Exit();
         stateMachine.ReusableData.IsSprinting = false;
-        stateMachine.Player.Collider.enabled = true;
-        ChangeGravityScale(gravityScale);
+        //stateMachine.Player.Collider.enabled = true;
+        stateMachine.Player.gameObject.layer = SetGameobjectLayer("Player");
+        stateMachine.Player.takeDamageTrigger.SetActive(true);
+        //ChangeGravityScale(gravityScale);
         //OnContactWithGroundExit();
         StopAnimation(stateMachine.Player.AnimationData.DashingParHash);
     }
@@ -76,5 +80,11 @@ public class PlayerDashState : PlayerMovementState
 
 
         return overlappedGroundColliders.Length > 0;
+    }
+
+    public int SetGameobjectLayer(string layerName)
+    {
+         int layer = LayerMask.NameToLayer(layerName);
+        return layer;
     }
 }

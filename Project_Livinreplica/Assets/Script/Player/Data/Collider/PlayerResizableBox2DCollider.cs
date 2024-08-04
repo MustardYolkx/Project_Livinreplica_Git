@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerResizableBox2DCollider : ResizableBoix2DCollider
 {
-    [field: SerializeField] public PlayerTriggerColliderData TriggerColliderData { get; private set; }
+    
 
     protected override void OnInitialize()
     {

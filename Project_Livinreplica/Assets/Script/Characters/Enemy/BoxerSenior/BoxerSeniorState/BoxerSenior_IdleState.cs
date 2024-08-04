@@ -15,6 +15,7 @@ public class BoxerSenior_IdleState : EnemyCombatIdle
     {
         base.Enter();
         enemy.isSheild= true;
+        enemy.CanHit = true;
         FaceToPlayer();
         ResetVelocity();
         StartAnimation(enemy.animationData.IdleParHash);
@@ -47,6 +48,7 @@ public class BoxerSenior_IdleState : EnemyCombatIdle
     {
         base.Exit();
         enemy.isSheild= false;
+        enemy.CanHit = false;
     }
     #region Main Methods
     public void CheckDefenseState()

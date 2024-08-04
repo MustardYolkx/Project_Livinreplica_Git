@@ -29,13 +29,22 @@ public class PlayerAirAttack : PlayerAttackState
     #region Main Methods
     public override void AnimationTransitionEvent()
     {
-        stateMachine.ChangeState(stateMachine.Falling);
+        if (stateMachine.Player.CheckGround())
+        {
+            stateMachine.ChangeState(stateMachine.IdleState);
+        }
+        else
+        {
+
+            stateMachine.ChangeState(stateMachine.Falling);
+        }
     }
 
     public void ChangeValue()
     {
         stateMachine.Player.currentAttackDamage = attackData.AirAttackDetail[attackCountIndex].Damage;
         stateMachine.Player.targetTakeDamAnim = attackData.AirAttackDetail[attackCountIndex].CorrespondAnimation;
+        stateMachine.Player.currentDamageForce = attackData.AttackCombo1Detail[attackCountIndex].DamageForce;
     }
     #endregion
 }

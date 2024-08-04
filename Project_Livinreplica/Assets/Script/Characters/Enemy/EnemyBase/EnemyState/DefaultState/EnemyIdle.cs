@@ -14,6 +14,9 @@ public class EnemyIdle : EnemyDefaultState
     {
         base.Enter();
         ResetVelocity();
+        //enemy.currentAttackDamage = enemy.enemySO.AttackData.IdleDamage[0].Damage;
+        //enemy.currentDamageForce = enemy.enemySO.AttackData.IdleDamage[0].DamageForce;
+        //enemy.targetTakeDamAnim = enemy.enemySO.AttackData.IdleDamage[0].CorrespondAnimation;
         StartAnimation(enemy.animationData.IdleParHash);
     }
     public override void LogicUpdate()

@@ -18,6 +18,7 @@ public class BoxerBossCombo1 : EnemyAttackState
         attackCountIndex = 0;
         enemy.attackCoolDownTime = enemy.boxerBossSO.BoxerBossAttackData.Combo1[attackCountIndex].coolDownTime;
         enemy.currentAttackDamage = enemy.boxerBossSO.BoxerBossAttackData.Combo1[attackCountIndex].Damage;
+        enemy.currentDamageForce = enemy.boxerBossSO.BoxerBossAttackData.Combo1[attackCountIndex].DamageForce;
         enemy.targetTakeDamAnim = enemy.boxerBossSO.BoxerBossAttackData.Combo1[attackCountIndex].CorrespondAnimation;
         StartAnimation(enemy.boxerBossAnimationData.BoxerBossCombo1ParHash);
     }

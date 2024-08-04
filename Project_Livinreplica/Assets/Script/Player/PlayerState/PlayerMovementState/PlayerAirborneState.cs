@@ -34,8 +34,14 @@ public class PlayerAirborneState : PlayerMovementState
     protected override void OnSprint(InputAction.CallbackContext obj)
     {
 
+        if (stateMachine.ReusableData.MovementInput == Vector2.zero)
+        {
+            stateMachine.ChangeState(stateMachine.SprintBackward);
+            return;
+        }
+
         stateMachine.ChangeState(stateMachine.SprintForward);
-    
+
     }
 
 

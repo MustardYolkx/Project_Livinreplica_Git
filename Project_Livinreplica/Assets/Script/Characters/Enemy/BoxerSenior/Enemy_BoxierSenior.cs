@@ -50,7 +50,7 @@ public class Enemy_BoxierSenior : Enemy,IDamagable
         stateMachine.PhysicsUpdate();
     }
 
-    public new void TakeDamage(string animationName, float Damage)
+    public new void TakeDamage(string animationName, float Damage, float damageForce,Vector3 pos)
     {
         if (canTakeDamage)
         {
@@ -73,7 +73,7 @@ public class Enemy_BoxierSenior : Enemy,IDamagable
                 Debug.Log("Taka Damage:" + Damage);
 
             }
-
+            Rb.AddForce((transform.position - pos) * damageForce, ForceMode2D.Impulse);
         }
     }
 }

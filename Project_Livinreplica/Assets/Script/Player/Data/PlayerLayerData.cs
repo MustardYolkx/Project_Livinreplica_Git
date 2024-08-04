@@ -6,6 +6,9 @@ using UnityEngine;
 [Serializable]
 public class PlayerLayerData 
 {
+    [field: SerializeField] public LayerMask PlayerDefualtLayer{ get; private set; }
+
+    [field: SerializeField] public LayerMask PlayerSprintLayer { get; private set; }
     [field:SerializeField] public LayerMask GroundLayer { get;private set; }
 
     [field: SerializeField] public LayerMask DamagableLayer { get; private set; }

@@ -7,20 +7,43 @@ public class EnemyAttackCheck : MonoBehaviour
     public Enemy enemy;
     private List<IDamagable> detectedDamagable = new List<IDamagable>();
 
+    private bool canHit;
+
     public void Awake()
     {
         enemy = GetComponentInParent<Enemy>();
+    }
+
+    public void Update()
+    {
+        if(enemy.CanHit)
+        {
+            CheckMeleeAttack();
+        }
+        else
+        {
+
+        }
     }
     public void AnimationDamageTrigger()
     {
         CheckMeleeAttack();
     }
 
+    public void TurnOnDamageTrigger()
+    {
+        enemy.CanHit= true;
+    }
+
+    public void TurnOffDamageTrigger()
+    {
+        enemy.CanHit = false;
+    }
     public void CheckMeleeAttack()
     {
         foreach (IDamagable item in detectedDamagable)
         {
-            item.TakeDamage(enemy.targetTakeDamAnim, enemy.currentAttackDamage);
+            item.TakeDamage(enemy.targetTakeDamAnim, enemy.currentAttackDamage,enemy.currentDamageForce,transform.position);
             //Debug.Log("Hit");
         }
     }
@@ -46,7 +69,7 @@ public class EnemyAttackCheck : MonoBehaviour
             if (damagableItem != null)
             {
                 detectedDamagable.Remove(damagableItem);
-                Debug.Log("Remove");
+                //Debug.Log("Remove");
             }
         }
     }
