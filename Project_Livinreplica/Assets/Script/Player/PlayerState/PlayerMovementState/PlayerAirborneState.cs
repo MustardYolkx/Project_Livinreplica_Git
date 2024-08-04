@@ -12,6 +12,7 @@ public class PlayerAirborneState : PlayerMovementState
     public override void Enter()
     {
         base.Enter();
+        stateMachine.ReusableData.MovementSpeedModifier = airborneData.JumpStaySpeedModifier;
         StartAnimation(stateMachine.Player.AnimationData.AirborneParHash);
         stateMachine.ReusableData.CurrentSprintForce = groundedData.SprintData.SprintForce;
     }

@@ -52,7 +52,7 @@ public class PlayerIdleState : PlayerGroundedState
     {
         base.Exit();
         stateMachine.ReusableData.CurrentJumpForce = airborneData.JumpForceStay;
-        stateMachine.ReusableData.MovementSpeedModifier = airborneData.JumpStaySpeedModifier;
+        //stateMachine.ReusableData.MovementSpeedModifier = airborneData.JumpStaySpeedModifier;
         stateMachine.ReusableData.CurrentSprintForce = groundedData.SprintData.SprintForce;
         StopAnimation(stateMachine.Player.AnimationData.IdleParHash);
     }
