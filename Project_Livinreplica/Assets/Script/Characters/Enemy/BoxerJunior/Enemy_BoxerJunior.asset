@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Enemy_BoxerJunior
   m_EditorClassIdentifier: 
   <EnemyData>k__BackingField:
-    WalkSpeed: 100
+
+    WalkSpeed: 50
+
   <LayerData>k__BackingField:
     <GroundLayer>k__BackingField:
       serializedVersion: 2
