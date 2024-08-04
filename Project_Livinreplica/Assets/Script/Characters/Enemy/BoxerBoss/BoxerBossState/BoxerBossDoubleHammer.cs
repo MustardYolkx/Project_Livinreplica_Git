@@ -17,6 +17,7 @@ public class BoxerBossDoubleHammer : EnemyAttackState
         attackCountIndex = 0;
         enemy.attackCoolDownTime = enemy.boxerBossSO.BoxerBossAttackData.DoubleHammer[attackCountIndex].coolDownTime;
         enemy.currentAttackDamage = enemy.boxerBossSO.BoxerBossAttackData.DoubleHammer[attackCountIndex].Damage;
+        enemy.currentDamageForce = enemy.boxerBossSO.BoxerBossAttackData.Combo1[attackCountIndex].DamageForce;
         enemy.targetTakeDamAnim = enemy.boxerBossSO.BoxerBossAttackData.DoubleHammer[attackCountIndex].CorrespondAnimation;
         StartAnimation(enemy.boxerBossAnimationData.BoxerBossDoubleHammerParHash);
     }

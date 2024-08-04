@@ -75,13 +75,13 @@ public class EnemyState
         {
             
             stateMachine.Enemy.transform.rotation = Quaternion.Euler(0, 0, 0);
-            
+            ResetVelocity();
         }
         else if (stateMachine.Enemy.isFacingRight == false)
         {
             
             stateMachine.Enemy.transform.rotation = Quaternion.Euler(0, 180, 0);
-            
+            ResetVelocity();
         }
     }
 
@@ -124,11 +124,11 @@ public class EnemyState
         if (enemy.CheckPlayerInRange())
         {
             
-            if (enemy.PlayerPos().x > enemy.transform.position.x)
+            if (enemy.PlayerPos().x - enemy.transform.position.x>0.3f)
             {
                 enemy.isFacingRight = true;
             }
-            else if (enemy.PlayerPos().x < enemy.transform.position.x)
+            else if (enemy.PlayerPos().x - enemy.transform.position.x<-0.3f)
             {
                 enemy.isFacingRight = false;
             }

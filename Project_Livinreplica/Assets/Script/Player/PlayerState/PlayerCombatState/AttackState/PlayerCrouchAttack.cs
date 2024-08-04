@@ -46,6 +46,7 @@ public class PlayerCrouchAttack : PlayerAttackState
     {
         stateMachine.Player.currentAttackDamage = attackData.CrouchAttackDetail[attackCountIndex].Damage;
         stateMachine.Player.targetTakeDamAnim = attackData.CrouchAttackDetail[attackCountIndex].CorrespondAnimation;
+        stateMachine.Player.currentDamageForce = attackData.AttackCombo1Detail[attackCountIndex].DamageForce;
     }
     private void LeaveCrouch(InputAction.CallbackContext obj)
     {

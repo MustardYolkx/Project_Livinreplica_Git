@@ -17,6 +17,7 @@ public class PlayerCrouchState : PlayerGroundedState
         stateMachine.ReusableData.CanFlip = false;
         stateMachine.ReusableData.MovementSpeedModifier = 0f;
         stateMachine.Player.ResizableBox2DCollider.RecalculateColliderThroughHeight(stateMachine.Player.ResizableBox2DCollider.DefaultColliderData.CrouchHeight, stateMachine.Player.ResizableBox2DCollider.DefaultColliderData.CrouchCenterY);
+
         ResetVelocity();
         
     }

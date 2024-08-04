@@ -17,6 +17,7 @@ public class BoxerBossDownPunch : EnemyAttackState
         attackCountIndex = 0;
         enemy.attackCoolDownTime = enemy.boxerBossSO.BoxerBossAttackData.DownPunch[attackCountIndex].coolDownTime;
         enemy.currentAttackDamage = enemy.boxerBossSO.BoxerBossAttackData.DownPunch[attackCountIndex].Damage;
+        enemy.currentDamageForce = enemy.boxerBossSO.BoxerBossAttackData.Combo1[attackCountIndex].DamageForce;
         enemy.targetTakeDamAnim = enemy.boxerBossSO.BoxerBossAttackData.DownPunch[attackCountIndex].CorrespondAnimation;
         StartAnimation(enemy.boxerBossAnimationData.BoxerBossDownPunchParHash);
     }

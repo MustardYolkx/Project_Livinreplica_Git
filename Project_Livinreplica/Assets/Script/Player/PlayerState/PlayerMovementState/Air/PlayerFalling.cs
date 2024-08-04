@@ -14,6 +14,7 @@ public class PlayerFalling : PlayerAirborneState
     {
         base.Enter();
         time = 0;
+        //stateMachine.ReusableData.CanTakeDamage = true;
         StartAnimation(stateMachine.Player.AnimationData.FallingParHash);
     }
 

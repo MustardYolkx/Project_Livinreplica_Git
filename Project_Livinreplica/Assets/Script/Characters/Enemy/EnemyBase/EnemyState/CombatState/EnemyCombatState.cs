@@ -8,6 +8,13 @@ public class EnemyCombatState : EnemyState
     {
     }
 
+    public override void Enter()
+    {
+        base.Enter();
+        enemy.currentAttackDamage = enemy.enemySO.AttackData.IdleDamage[0].Damage;
+        enemy.currentDamageForce = enemy.enemySO.AttackData.IdleDamage[0].DamageForce;
+        enemy.targetTakeDamAnim = enemy.enemySO.AttackData.IdleDamage[0].CorrespondAnimation;
+    }
     public override void LogicUpdate()
     {
 

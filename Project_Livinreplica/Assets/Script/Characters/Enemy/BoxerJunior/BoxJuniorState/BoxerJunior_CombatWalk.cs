@@ -46,8 +46,9 @@ public class BoxerJunior_CombatWalk : EnemyCombatState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
-
-        enemy.Rb.AddForce(enemy.enemySO.EnemyData.WalkSpeed * enemy.transform.right, ForceMode2D.Force);
+        Vector3 horizontalVelocity = GetHorizontalVelocity();
+        enemy.Rb.AddForce(enemy.enemySO.EnemyData.WalkSpeed * enemy.transform.right - horizontalVelocity, ForceMode2D.Force);
+        //enemy.Rb.AddForce(enemy.enemySO.EnemyData.WalkSpeed * enemy.transform.right, ForceMode2D.Force);
 
     }
     public override void Exit()

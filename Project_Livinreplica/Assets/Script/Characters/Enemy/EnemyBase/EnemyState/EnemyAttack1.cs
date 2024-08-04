@@ -17,6 +17,7 @@ public class EnemyAttack1 : EnemyAttackState
         base.Enter();
         enemy.attackCoolDownTime = 3f;
         enemy.currentAttackDamage = enemy.enemySO.AttackData.Attack1[attackCountIndex].Damage;
+        enemy.currentDamageForce = enemy.enemySO.AttackData.Attack1[attackCountIndex].DamageForce;
         enemy.targetTakeDamAnim = enemy.enemySO.AttackData.Attack1[attackCountIndex].CorrespondAnimation;
         StartAnimation(enemy.animationData.Attack1ParHash);
     }

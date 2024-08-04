@@ -28,12 +28,13 @@ public class Enemy : MonoBehaviour,IDamagable
 
     public float attackCoolDownTime { get; set; }
 
-    
+    public bool CanHit { get; set; }
 
     public EnemyAttackCheck attackCheck { get; private set; }
     public EnemyShieldTriggerBox shieldTriggerBox { get;private set; }
     [HideInInspector] public float currentAttackDamage;
     [HideInInspector] public string targetTakeDamAnim;
+    [HideInInspector] public float currentDamageForce;
 
     [SerializeField] private Transform ledgeCheckPoint;
     [SerializeField] private Transform wallCheckPoint;
@@ -139,7 +140,7 @@ public class Enemy : MonoBehaviour,IDamagable
         }
     }
     #endregion
-    public void TakeDamage(string animationName, float Damage)
+    public void TakeDamage(string animationName, float Damage,float damageForce,Vector3 pos)
     {
         //if (canTakeDamage)
         //{

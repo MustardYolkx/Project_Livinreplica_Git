@@ -48,7 +48,7 @@ public class Enemy_BoxJunior : Enemy,IDamagable
         stateMachine.PhysicsUpdate();
     }
 
-    public new void TakeDamage(string animationName, float Damage)
+    public new void TakeDamage(string animationName, float Damage, float damageForce , Vector3 pos)
     {
         Debug.Log("hit");
         if (canTakeDamage)
@@ -67,7 +67,7 @@ public class Enemy_BoxJunior : Enemy,IDamagable
                 Debug.Log("Enemy Taka Damage:" + Damage);
 
             }
-
+            Rb.AddForce((transform.position - pos)* damageForce, ForceMode2D.Impulse);
         }
 
     }

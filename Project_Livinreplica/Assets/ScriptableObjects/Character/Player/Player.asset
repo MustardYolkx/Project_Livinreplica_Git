@@ -21,6 +21,7 @@ MonoBehaviour:
     <GroundToFallRayDistance>k__BackingField: 1.66
     <SprintData>k__BackingField:
       <SprintForce>k__BackingField: 10
+    <GroundDetectRange>k__BackingField: 2
   <AirbornedData>k__BackingField:
     <JumpForceStay>k__BackingField: {x: 0, y: 10}
     <JumpStaySpeedModifier>k__BackingField: 0.3
@@ -35,27 +36,33 @@ MonoBehaviour:
     - Name: Combo1.0
       Damage: 5
       AttackMoveForce: {x: 0, y: 0}
+      DamageForce: 0
       CorrespondAnimation: TakeDamageNormal
     - Name: Combo1.1
       Damage: 10
       AttackMoveForce: {x: 0, y: 0}
+      DamageForce: 0
       CorrespondAnimation: TakeDamageNormal
     - Name: Combo1.2
       Damage: 13
       AttackMoveForce: {x: 0, y: 0}
+      DamageForce: 0
       CorrespondAnimation: TakeDamageNormal
     <AirAttackDetail>k__BackingField:
     - Name: Air Attack
       Damage: 15
       AttackMoveForce: {x: 0, y: 0}
+      DamageForce: 0
       CorrespondAnimation: TakeDamageHard
     <CrouchAttackDetail>k__BackingField:
     - Name: Crouch Attack
       Damage: 3
       AttackMoveForce: {x: 0, y: 0}
+      DamageForce: 0
       CorrespondAnimation: TakeDamageNormal
     <SpecialAttackDetail>k__BackingField:
     - Name: Special Attack
       Damage: 10
       AttackMoveForce: {x: 0, y: 0}
+      DamageForce: 0
       CorrespondAnimation: TakeDamageNormal

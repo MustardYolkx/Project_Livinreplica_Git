@@ -13,7 +13,11 @@ public class BoxerSenior_DefendState : EnemyShieldState
     public override void Enter()
     {
         base.Enter();
+        enemy.currentAttackDamage = enemy.enemySO.AttackData.IdleDamage[0].Damage;
+        enemy.currentDamageForce = enemy.enemySO.AttackData.IdleDamage[0].DamageForce;
+        enemy.targetTakeDamAnim = enemy.enemySO.AttackData.IdleDamage[0].CorrespondAnimation;
         enemy.canFlip= true;
+        enemy.CanHit = true;
     }
     public override void LogicUpdate()
     {
@@ -36,12 +40,16 @@ public class BoxerSenior_DefendState : EnemyShieldState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
-        enemy.Rb.AddForce(enemy.enemySO.EnemyData.WalkSpeed * enemy.transform.right, ForceMode2D.Force);
+        Vector3 horizontalVelocity = GetHorizontalVelocity();
+        
+        enemy.Rb.AddForce(enemy.enemySO.EnemyData.WalkSpeed * enemy.transform.right - horizontalVelocity, ForceMode2D.Force);
+        //enemy.Rb.AddForce(enemy.enemySO.EnemyData.WalkSpeed * enemy.transform.right, ForceMode2D.Force);
     }
     public override void Exit() 
     { 
         base.Exit();
         enemy.isSheild = false;
+        enemy.CanHit = false;
     }
     #endregion
 
@@ -57,6 +65,8 @@ public class BoxerSenior_DefendState : EnemyShieldState
             enemy.isSheild = false;
         }
     }
+
+    
     #endregion
 
 }

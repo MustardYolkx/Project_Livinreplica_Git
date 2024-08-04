@@ -64,6 +64,7 @@ public class PlayerAttackCombo1State : PlayerAttackState
         stateMachine.ReusableData.AttackForce = attackData.AttackCombo1Detail[attackCountIndex].AttackMoveForce;
         stateMachine.Player.currentAttackDamage = attackData.AttackCombo1Detail[attackCountIndex].Damage;
         stateMachine.Player.targetTakeDamAnim = attackData.AttackCombo1Detail[attackCountIndex].CorrespondAnimation;
+        stateMachine.Player.currentDamageForce = attackData.AttackCombo1Detail[attackCountIndex].DamageForce;
     }
 
     public override void AnimationEnterEvent()

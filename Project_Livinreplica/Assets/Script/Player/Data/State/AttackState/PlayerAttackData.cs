@@ -24,6 +24,7 @@ public struct AttackDetails
     public string Name;
     public float Damage;
     public Vector2 AttackMoveForce;
+    public float DamageForce;
     public string CorrespondAnimation;
     
 }

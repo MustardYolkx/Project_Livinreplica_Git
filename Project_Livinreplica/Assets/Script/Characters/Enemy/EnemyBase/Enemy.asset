@@ -28,11 +28,19 @@ MonoBehaviour:
       serializedVersion: 2
       m_Bits: 640
   <AttackData>k__BackingField:
+    <IdleDamage>k__BackingField:
+    - Name: Idle
+      Damage: 2
+      coolDownTime: 0
+      AttackMoveForce: {x: 0, y: 0}
+      DamageForce: 5
+      CorrespondAnimation: TakeDamageNormal
     <Attack1>k__BackingField:
     - Name: EnemyAttack1
       Damage: 4
       coolDownTime: 0
       AttackMoveForce: {x: 0, y: 0}
+      DamageForce: 10
       CorrespondAnimation: TakeDamageNormal
   <EnemyDetectedData>k__BackingField:
     <LedgeDetectDistance>k__BackingField: 0.4

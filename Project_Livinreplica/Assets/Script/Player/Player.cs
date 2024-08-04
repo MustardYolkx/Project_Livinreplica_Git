@@ -33,7 +33,12 @@ public class Player : MonoBehaviour,IDamagable
     public PlayerAttackCheck attackCheck { get; private set; }
 
     public Collider2D Collider { get; private set; }
+    public GameObject takeDamageTrigger; 
+
+    [SerializeField] private Transform groundCheckPoint;
+
     [HideInInspector]public float currentAttackDamage;
+    [HideInInspector] public float currentDamageForce;
     [HideInInspector] public string targetTakeDamAnim;
 
 
@@ -136,7 +141,7 @@ public class Player : MonoBehaviour,IDamagable
     #endregion
 
     #region Take Damage
-    public void TakeDamage(string animationName, float Damage)
+    public void TakeDamage(string animationName, float Damage,float damageForce,Vector3 pos)
     {
         if (MovementStateMachine.ReusableData.CanTakeDamage)
         {
@@ -144,6 +149,10 @@ public class Player : MonoBehaviour,IDamagable
             {
                 MovementStateMachine.ChangeState(MovementStateMachine.TakeDamageNormalState);
             }
+
+            Rb.AddForce(new Vector2((transform.position - pos).x,0).normalized * damageForce, ForceMode2D.Impulse);
+
+            //Rb.AddForce((transform.position - pos).normalized * damageForce, ForceMode2D.Impulse);
             //else if (animationName == "TakeDamageHard")
             //{
             //    MovementStateMachine.ChangeState(MovementStateMachine.TakeDamageHardState);
@@ -158,6 +167,13 @@ public class Player : MonoBehaviour,IDamagable
     public void TurnOffRB()
     {
         
+    }
+    #endregion
+
+    #region Trigger
+    public virtual bool CheckGround()
+    {
+        return Physics2D.Raycast(groundCheckPoint.position, Vector2.down, data.GroundedData.GroundDetectRange, LayerData.GroundLayer);
     }
     #endregion
 }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Enemy_BoxerJunior
   m_EditorClassIdentifier: 
   <EnemyData>k__BackingField:
-    WalkSpeed: 700
+    WalkSpeed: 100
   <LayerData>k__BackingField:
     <GroundLayer>k__BackingField:
       serializedVersion: 2
@@ -28,11 +28,19 @@ MonoBehaviour:
       serializedVersion: 2
       m_Bits: 512
   <AttackData>k__BackingField:
+    <IdleDamage>k__BackingField:
+    - Name: Idle
+      Damage: 2
+      coolDownTime: 0
+      AttackMoveForce: {x: 0, y: 0}
+      DamageForce: 5
+      CorrespondAnimation: TakeDamageNormal
     <Attack1>k__BackingField:
     - Name: Attack1
       Damage: 3
       coolDownTime: 0
       AttackMoveForce: {x: 0, y: 0}
+      DamageForce: 10
       CorrespondAnimation: TakeDamageNormal
   <EnemyDetectedData>k__BackingField:
     <LedgeDetectDistance>k__BackingField: 0.4
